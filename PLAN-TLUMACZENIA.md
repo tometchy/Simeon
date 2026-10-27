@@ -7,7 +7,7 @@ Prefiks nazwy pliku oznacza kolejność eksportu. Numer rozdziału w książce j
 | Część | Tytuł w oryginale | Początek w druku | Plik w `chapters/` | Status |
 | --- | --- | --- | --- | --- |
 | Przedmowa | Preface | vii | `01-przedmowa.md` | szkielet, do tłumaczenia |
-| I | Family and School | 1 | `02-rozdzial-01-rodzina-i-szkola.md` | szkielet, do tłumaczenia |
+| I | Family and School | 1 | `02-rozdzial-01-rodzina-i-szkola.md` | przetłumaczony i sprawdzony ze skanem, eksporty gotowe |
 | II | Cambridge—Conversion | 12 | `03-rozdzial-02.md` | do utworzenia |
 | III | Trinity Church | 24 | `04-rozdzial-03.md` | do utworzenia |
 | IV | The Parish | 39 | `05-rozdzial-04.md` | do utworzenia |
@@ -27,6 +27,6 @@ Prefiks nazwy pliku oznacza kolejność eksportu. Numer rozdziału w książce j
 
 ## Najbliższy fragment
 
-Przedmowa: strony PDF 24–26, następnie nota na stronie PDF 27. Rozdział I zaczyna się na stronie PDF 30. Numery stron PDF liczymy od 1. W skanie znajdują się duplikaty stron wstępnych, których nie należy tłumaczyć ponownie.
+Aktualny punkt wznowienia i stan kontroli opisuje `POSTEP.md`. Rozdział I (PDF 30–40 / druk 1–11) przetłumaczono na osobną prośbę użytkownika. Przedmowa pozostaje do tłumaczenia: strony PDF 24–26, następnie nota na stronie PDF 27. Kolejny rozdział po I to II, PDF 41 / druk 12. Numery stron PDF liczymy od 1. W skanie znajdują się duplikaty stron wstępnych, których nie należy tłumaczyć ponownie.
 
 Po przetłumaczeniu części zmień jej status, zapisz ustalenia terminologiczne i wygeneruj eksporty. Polskie tytuły kolejnych rozdziałów i końcówki nazw plików można uzupełniać w trakcie pracy, zachowując kolejność prefiksów.

@@ -30,6 +30,15 @@ Większość stron PDF-u nie zawiera warstwy tekstowej. Odczytuj obraz skanu lub
 
 Wstępne strony skanu się powtarzają: przedmowa znajduje się na stronach PDF 24–26 (duplikat: 16–18), nota po niej na stronie 27 (duplikat: 19), spis treści na stronie 28 (duplikat: 20). Rozdział I zaczyna się na stronie PDF 30, drukowanej jako 1. Numery PDF liczymy od 1. Nie tłumacz powtórzonych stron drugi raz.
 
+## Odporność na przerwanie i wznawianie
+
+- Zakładaj, że limit tokenów lub awaria może przerwać pracę w dowolnej chwili. Zapisuj ukończone akapity na dysku na bieżąco, najpóźniej po 1–2 stronach źródła. Nie pozostawiaj większej partii przekładu wyłącznie w rozmowie lub pamięci agenta.
+- Po każdym zapisanym fragmencie aktualizuj `POSTEP.md`: plik rozdziału, zakres stron PDF i druku, ostatni ukończony akapit (krótki cytat z oryginału), dokładne miejsce kontynuacji, stan porównania ze skanem i pozostałe kontrole. Najpierw zapisz tekst, potem stan, aby ewentualne przerwanie nie zawyżyło postępu.
+- Oddzielaj statusy: zapisany przekład, przekład sprawdzony ze skanem, wygenerowane eksporty, przegląd wizualny i utworzony PR. Nie oznaczaj części jako gotowej, dopóki wymagane kontrole się nie zakończą.
+- Przy wznowieniu przeczytaj `POSTEP.md`, `PLAN-TLUMACZENIA.md`, `REVIEW.md` i `git status --short`, a następnie porównaj zapisany koniec rozdziału ze źródłem. Pliki na dysku są rozstrzygające, jeśli przerwanie nastąpiło między zapisem tekstu a aktualizacją postępu.
+- Zapisuj istotne wątpliwości i ustalenia od razu w `REVIEW.md` oraz `TERMINOLOGIA.md`. Pliki tymczasowe i wiadomości agentów nie mogą być jedynym miejscem przechowywania potrzebnych ustaleń.
+- Zapisuj rzeczywiste czasy etapów i przerw, jeśli zadanie obejmuje oszacowanie czasu. Przerw wynikających z limitów nie traktuj jako czasu aktywnej pracy.
+
 ## Generowanie i weryfikacja
 
 Po każdej zmianie treści książki, przed utworzeniem pull requesta, obowiązkowo uruchom:
