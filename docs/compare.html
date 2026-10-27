@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="images/compare-favicon.svg" type="image/svg+xml">
-  <title>Porównanie wydania angielskiego i polskiego</title>
+  <title>Charles Simeon — porównanie oryginału i przekładu</title>
   <style>
     :root {
       color-scheme: light;
@@ -487,7 +487,7 @@
       </fieldset>
       <div class="sync-fields">
         <label class="sync-field">Właściciel repozytorium<input name="owner" autocomplete="username" placeholder="tometchy" required></label>
-        <label class="sync-field">Nazwa repozytorium<input name="repository" placeholder="pickering-compare-data" required></label>
+        <label class="sync-field">Nazwa repozytorium<input name="repository" placeholder="simeon-compare-data" required></label>
         <label class="sync-field sync-field-wide">Ścieżka pliku<input name="path" value="highlights.json" required></label>
         <label class="sync-field sync-field-wide">Token GitHub<input name="token" type="password" autocomplete="off" placeholder="github_pat_…" required></label>
         <label class="sync-field sync-field-wide">Tryb
@@ -512,12 +512,16 @@
 
     pdfjsLib.GlobalWorkerOptions.workerSrc = "./vendor/pdfjs/pdf.worker.min.mjs";
 
-    const repositoryRawUrl = "https://raw.githubusercontent.com/tometchy/Bog-zachowal-swoj-Tekst-Wilbur-Pickering/master/";
+    const pageUrl = new URL(window.location.href);
+    const repositoryName = pageUrl.pathname.split("/").filter(Boolean)[0];
+    const repositoryRawUrl = pageUrl.hostname.endsWith(".github.io") && repositoryName
+      ? `https://raw.githubusercontent.com/${pageUrl.hostname.split(".")[0]}/${repositoryName}/HEAD/`
+      : "../";
     const documents = {
-      english: repositoryRawUrl + "God-Has-Preserved-His-Text-4th.pdf",
-      polish: repositoryRawUrl + "build/pdf/Bog-zachowal-swoj-Tekst-Wilbur-Pickering.pdf"
+      english: repositoryRawUrl + "charlessimeon00moulgoog.pdf",
+      polish: repositoryRawUrl + "build/pdf/Charles-Simeon-H-C-G-Moule.pdf"
     };
-    const storagePrefix = "pdf-comparison:";
+    const storagePrefix = "simeon-pdf-comparison:";
     const syncPrefix = storagePrefix + "sync:";
     const syncDelay = 90_000;
     const syncRefreshInterval = 10 * 60_000;
@@ -566,7 +570,7 @@
 
       const sharedValues = {
         owner: url.searchParams.get("owner")?.trim() || savedValue("sync:owner", "tometchy").trim() || "tometchy",
-        repository: url.searchParams.get("repository")?.trim() || savedValue("sync:repository", "pickering-compare-data").trim() || "pickering-compare-data",
+        repository: url.searchParams.get("repository")?.trim() || savedValue("sync:repository", "simeon-compare-data").trim() || "simeon-compare-data",
         path: url.searchParams.get("path")?.trim() || savedValue("sync:path", "highlights.json").trim() || "highlights.json",
         token,
         mode: "read",

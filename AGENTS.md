@@ -1,198 +1,58 @@
-Tłumaczę książkę Wilbura Pickeringa z angielskiego na polski. Zadaniem jest tłumaczyć je wiernie, bez interpretowania, poprawiania argumentacji autora ani dopowiadania od siebie.
+# Charles Simeon — instrukcje pracy
 
-Zasady tłumaczenia i formatowania:
+To repozytorium służy do tłumaczenia z angielskiego na polski książki *Charles Simeon* autorstwa H. C. G. Moule’a (Handley Carr Glyn Moule), Methuen & Co., London, 1892.
 
-1. Tłumacz wiernie sens i tok argumentacji autora.
-   - Nie poprawiaj autora merytorycznie.
-   - Nie „wygładzaj” jego argumentacji kosztem informacji.
-   - Jeśli autor używa dwóch różnych terminów, zachowuj to rozróżnienie także po polsku.
-   - Jeśli coś jest niejednoznaczne terminologicznie, nie normalizuj tego po cichu — zachowaj informację albo krótko zaznacz problem poza tłumaczeniem.
+Źródło: `charlessimeon00moulgoog.pdf`. Tłumaczenie powstaje stopniowo w `chapters/`. Nie zakładaj, że całość jest już przetłumaczona. Stan i kolejność prac opisuje `PLAN-TLUMACZENIA.md`.
 
-2. Zachowuj cały Markdown źródła:
-   - `*kursywa*`
-   - `**pogrubienie**`
-   - indeksy górne, np. `**M^7^**`, `**f^35^**`
-   - przypisy, np. `[^1]`, `[^x]`
-   - nagłówki, listy, tabele itd.
-   - Nie zmieniaj identyfikatorów przypisów.
+## Wierność tłumaczenia
 
-3. Odpowiedź z tłumaczeniem zawsze podawaj jako SUROWY MARKDOWN w bloku kodu:
-   ```markdown
-   ...
+1. Zachowuj sens, tok argumentacji i rozróżnienia terminologiczne autora. Nie poprawiaj go merytorycznie, nie dopowiadaj własnych wyjaśnień i nie pomijaj informacji dla płynności stylu.
+2. Zachowuj cytaty, daty, nazwiska, tytuły, symbole, em dash, Q.E.D. i wyróżnienia. Zachowuj kursywę łacińskich i greckich wyrażeń, jeśli występuje w źródle.
+3. Problemy w źródle, literówki i niejednoznaczności sygnalizuj poza tłumaczeniem lub w `REVIEW.md`. Nie zmieniaj znaczenia samowolnie.
+4. Nazwy i odpowiedniki sprawdzaj w `TERMINOLOGIA.md` oraz istniejących rozdziałach. Nowe ustalenia zapisuj w glosariuszu. Nie narzucaj nieuzgodnionych odpowiedników historycznych urzędów i instytucji.
+5. Nazwy ksiąg biblijnych podawaj zgodnie z Biblią Toruńską (np. Revelation → Objawienie Jana). Skrót NT rozwijaj jako Nowy Testament.
+6. Cytaty biblijne tłumacz samodzielnie i wiernie z tekstu przytoczonego przez autora, bez zastępowania ich gotowym polskim przekładem. Zachowuj wielkość liter oryginalnego cytatu, także w tytułach i zaimkach.
+7. Nawiasy autora zachowuj, preferując okrągłe, a kwadratowe stosuj przy nawiasach wewnątrz nawiasów. Nie zmieniaj nawiasów należących do składni Markdownu.
+8. Preferuj przecinki zamiast średników, gdy można to zrobić bez utraty sensu i struktury wypowiedzi.
 
-Jest to ważne, ponieważ kopiuję tekst na Androidzie do aplikacji GitHub i przy kopiowaniu wyrenderowanego Markdownu giną gwiazdki.
+## Markdown i przypisy
 
-4. Nazwy ksiąg biblijnych podawaj zgodnie z Biblią Toruńską. Przykład:
+- Zachowuj pełny Markdown, w tym `*kursywę*`, `**pogrubienia**`, indeksy górne `^...^`, nagłówki, listy i przypisy. Nie zmieniaj istniejących identyfikatorów przypisów.
+- Nowe przypisy otrzymują unikalne w całej książce identyfikatory opisujące ich treść, np. `[^carus-wspomnienia-o-simeonie]`, zamiast powtarzających się numerów. Definicje umieszczaj w odpowiednim pliku rozdziału. Przypisy tłumacza oznaczaj `(przyp. tłum.)`.
+- Stosuj zwykłe tabele Markdown z pionowymi kreskami `|`, bez surowego LaTeX-u.
+- Tłumaczenie prezentowane w rozmowie zawsze podawaj jako surowy Markdown w bloku kodu oznaczonym `markdown`, aby można je było skopiować na Androidzie bez utraty gwiazdek. Do plików `chapters/` zapisuj sam Markdown, bez zewnętrznego bloku kodu.
+- Każda część książki ma oddzielny plik z prefiksem liczbowym. Nagłówek `#` oznacza część lub rozdział, `##` podrozdział. Zachowuj kolejność oryginału. Pliki są łączone według nazw.
+- Nie dodawaj treści roboczej do widocznego tekstu książki. Wskazówki i odniesienia do stron mogą być zapisane w komentarzach HTML.
 
-Revelation → Objawienie Jana
+## Praca ze skanem
 
-5. Ustalone odpowiedniki terminologiczne:
+Większość stron PDF-u nie zawiera warstwy tekstowej. Odczytuj obraz skanu lub weryfikuj OCR z obrazem. Nie traktuj błędów OCR jako treści autora.
 
-Majority Text → Tekst Większościowy
+Wstępne strony skanu się powtarzają: przedmowa znajduje się na stronach PDF 24–26 (duplikat: 16–18), nota po niej na stronie 27 (duplikat: 19), spis treści na stronie 28 (duplikat: 20). Rozdział I zaczyna się na stronie PDF 30, drukowanej jako 1. Numery PDF liczymy od 1. Nie tłumacz powtórzonych stron drugi raz.
 
-evidence → dowód / dowody / dowodów itd., odpowiednio fleksyjnie
+## Generowanie i weryfikacja
 
-MSS → manuskrypty
-
-MS → manuskrypt
-
-steppingstone → punkt pośredni
-
-Notes of Truth → Notatki prawdy
-
-original wording to oryginalne sformułowania, nie oryginalne brzmienie
-
-NT → zawsze rozwiń jako Nowy Testament
-
-Gdy autor używa nawiasu kwadratowego używaj okrągłego, chyba, że to nawiasy w nawiasach.
-
-reading w kontekście krytyki tekstu → odczyt, nie „lekcja”
-
-shared readings → wspólne odczyty
-
-variant reading → wariantowy odczyt albo odczyt wariantowy, zależnie od składni
-
-minuscule → minuskuł
-
-cursive(s) → zachowuj jako odrębny termin, np. rękopis kursywny / rękopisy kursywne; nie sprowadzaj automatycznie do „minuskuł”
-
-6. Gdy Pickering pisze Text wielką literą i chodzi mu o autograf / oryginalny tekst Biblii, tłumacz jako Tekst wielką literą.
-
-Original Text → Tekst Oryginalny
-
-Jeśli Text wielką literą oznacza w danym miejscu coś innego, rozpoznaj to z kontekstu i nie stosuj tej zasady mechanicznie.
-
-7. Zachowuj symbole i oznaczenia krytycznotekstowe dokładnie np.:
-
-**K^r^**
-
-**K^x^**
-
-**f^35^**
-
-**M^5^**
-
-**M^6^**
-
-**M^7^**
-
-**M^a-b^**
-
-**M^c^**
-
-**M^d-e^** Nie upraszczaj ich i nie zmieniaj zapisu.
-
-
-
-8. Skróty takie jak PA mogą pozostać jako *PA*, jeśli autor używa ich jako skrótu wcześniej zdefiniowanego terminu, np. Pericope Adulterae.
-
-
-9. W przypadku terminów technicznych z krytyki tekstu preferuj precyzję nad stylistycznym wygładzaniem. Przykładowo:
-
-line of transmission → linia przekazu
-
-text-type → typ tekstu
-
-apparatus → aparat krytyczny
-
-collation / collate → kolacjonowanie / kolacjonować, jeśli pasuje do kontekstu
-
-attestation → poświadczenie
-
-archetype → archetyp
-
-common denominator → wspólny mianownik
-
-
-
-10. Tabele:
-
-
-
-domyślnie zapisuj jako zwykłe tabele Markdown z pionowymi kreskami |,
-
-np.:
-
-
-	opis
-
-+++	około 20%
-++--	około 25%
-++	około 30%
-+---	około 35%
-+	około 40%
-
-
-Nie używaj raw LaTeX do tabel.
-
-Docelowo generuję z Markdownu PDF/EPUB/DOCX za pomocą Pandoca.
-
-
-Zachowaj strukturę, pogrubienia, kursywę, symbole, przypisy i tabele w miarę możliwości,
-
-
-11. Jeśli zauważysz rzeczywisty problem w źródle, literówkę, niejednoznaczność albo miejsce, gdzie polski odpowiednik może zatrzeć ważną informację:
-
-
-
-Stosuj wierne tłumaczenie,
-Nie zmieniaj samowolnie znaczenia tekstu.
-
-
-14. Zachowuj także nawiasy autora, dopowiedzenia w nawiasach kwadratowych, em dash, Q.E.D. oraz łacińskie i greckie wyrażenia w kursywie, jeśli tak są zapisane w źródle. Ale preferuj nawiasy okrągłe, ale jak jest nawias w nawiasie to wtedy nawiasy kwadratowe w ś©odku.
-
-15. Preferuj przecinki, jeśli to możliwe, nawet gdzie Pickering stosuje średniki.
-
-16. Fragmentów Biblii cytowanych przez Pickeringa nie przepisuj z żadnego istniejącego
-przekładu Biblii. Tłumacz je samodzielnie i wiernie z tekstu przytoczonego przez
-Pickeringa, zachowując zastosowaną przez niego wielkość liter, w tym wielkie i małe
-litery w nazwach, tytułach oraz zaimkach.
-
-
-**Ten prompt jest celowo dość restrykcyjny**, żeby nowy chat nie zaczął po kilku wiadomościach „ulepszać” terminologii po swojemu. Np. gdy są punkty o `Text`, `reading`, `cursive/minuscule`, `evidence` i surowym Markdownie.
-
-Ogólnie całe tłumaczenie wcześniej robiłem paragraf po paragrafie. Wszystko to w pandoc, dodając kolejne rozdziały w katalogu chapters - https://github.com/tometchy/Bog-zachowal-swoj-Tekst-Wilbur-Pickering/tree/master/chapters
-
-Zwróć uwagę, że przypisy, zeby nie miały konfliktujących numerków, to każdy przypis to kilku słowne podsumowanie jego treści.
-
-Oryginał to plik pdf ten - https://github.com/tometchy/Bog-zachowal-swoj-Tekst-Wilbur-Pickering/blob/master/God-Has-Preserved-His-Text-4th.pdf
-
-Przeanalizuj dobrze obecną sturkturę, żeby kontynuacja była dokładnie według tej samej struktury, tak jakbym to ja dalej robił, najlepiej też stosowane przez mnie odpowiedniki tłumaczeń też dalej konsekwentnie stosuj.
-
-## UWAGA!
-
-Już jest całość wstępnie przetłumaczona, teraz robię review i poprawki.
-Będę wrzucał instrukcje do dalszych poprawek albo tekstem albo screenshotem na którym ręcznie zaznaczę co ma być zmienione i jak, po przeanalizowaniu napisanej przeze mnie instrukcji popraw odpowiedni pandocowy markdown file a następnie przegeneruj pliki i zmienione także zawrzyj w PR.
-
-## Generowanie PDF
 Po każdej zmianie treści książki, przed utworzeniem pull requesta, obowiązkowo uruchom:
 
 ```bash
 make pdf
+test -s build/pdf/Charles-Simeon-H-C-G-Moule.pdf
 ```
 
-PDF musi zostać poprawnie wygenerowany jako:
+Jeśli generowanie się nie powiedzie, najpierw ustal i napraw przyczynę. Nie twórz PR-a z błędem generowania. Obejrzyj zmienione strony PDF-u.
 
-build/pdf/Bog-zachowal-swoj-Tekst-Wilbur-Pickering.pdf
+Przed PR-em wygeneruj pozostałe formaty i sprawdź stan repozytorium:
 
-Nie kończ zadania i nie twórz PR-a, jeśli make pdf zakończy się błędem.
-Najpierw ustal przyczynę błędu i ją napraw.
-
-Po wygenerowaniu PDF sprawdź:
-
-test -s build/pdf/Bog-zachowal-swoj-Tekst-Wilbur-Pickering.pdf
+```bash
+make book
+git diff --check
 git status --short
+```
 
-Jeżeli wygenerowany PDF uległ zmianie, uwzględnij go w tym samym commicie i pull requeście
-co odpowiadająca mu zmiana Markdownu.
+Zmienione pliki w `build/` i `docs/` dołącz do tego samego commita i PR-a co odpowiednie zmiany Markdownu. Po zmianach w porównywarce uruchom `make test`.
 
-Nie używaj generate.sh ani Podmana tylko do generowania PDF w środowisku Codex.
-Środowisko Codex ma bezpośrednio zainstalowane wymagane zależności i należy używać make pdf.
+W środowisku Codex używaj bezpośrednio `make pdf`, bez `generate.sh` i Podmana. Zachowuj plik źródłowy bez zmian. Nie nadawaj tłumaczeniu licencji ani wydawcy bez ustalenia z użytkownikiem.
 
 ## Kończenie pracy
 
-Po każdej zmianie w repozytorium utwórz pull request i zakończ odpowiedź bezpośrednim,
-klikalnym linkiem do niego. Przed podaniem linku zweryfikuj za pomocą GitHub CLI lub
-API, że pull request rzeczywiście istnieje, jest otwarty i prowadzi do właściwego
-repozytorium oraz gałęzi. Nie traktuj samego przygotowania tytułu i opisu PR-a jako
-jego utworzenia.
+Po zmianach w repozytorium utwórz pull request i zakończ odpowiedź bezpośrednim, klikalnym linkiem. Przed podaniem linku zweryfikuj przez GitHub CLI lub API, że PR rzeczywiście istnieje, jest otwarty oraz wskazuje właściwe repozytorium i gałęzie. Sam tytuł i opis nie oznaczają utworzenia PR-a.

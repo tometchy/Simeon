@@ -2,7 +2,7 @@
 
 set -eu
 
-IMAGE_NAME="bog-zachowal-swoj-tekst-builder"
+IMAGE_NAME="charles-simeon-builder"
 REPO_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
 if [ "$#" -gt 1 ]; then
@@ -29,4 +29,4 @@ podman run \
     --volume "$REPO_DIR:/workspace:Z" \
     --workdir /workspace \
     "$IMAGE_NAME" \
-    sh -c 'make pdf && make epub && make html && make docx'
+    make book

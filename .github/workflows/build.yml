@@ -1,0 +1,37 @@
+name: Build book
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y \
+            make pandoc fonts-dejavu-core lmodern texlive-fonts-recommended \
+            texlive-lang-polish texlive-plain-generic texlive-xetex
+      - name: Test comparison viewer
+        run: make test
+      - name: Build all formats
+        run: make book
+      - name: Verify generated files
+        run: |
+          test -s build/pdf/Charles-Simeon-H-C-G-Moule.pdf
+          test -s build/epub/Charles-Simeon-H-C-G-Moule.epub
+          test -s build/docx/Charles-Simeon-H-C-G-Moule.docx
+          test -s docs/index.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: charles-simeon
+          path: |
+            build/
+            docs/

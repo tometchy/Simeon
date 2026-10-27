@@ -12,7 +12,7 @@ const applicationScript = inlineScript.replace(
   /^\s*import \* as pdfjsLib from "\.\/vendor\/pdfjs\/pdf\.min\.mjs";$/m,
   "const pdfjsLib = { GlobalWorkerOptions: {} };"
 );
-const prefix = "pdf-comparison:";
+const prefix = "simeon-pdf-comparison:";
 const configuration = {
   [`${prefix}sync:owner`]: "test-owner",
   [`${prefix}sync:repository`]: "test-highlights",
@@ -69,7 +69,7 @@ function deferred() {
   return { promise, resolve };
 }
 
-async function createApp(initialStorage = {}) {
+async function createApp(initialStorage = {}, locationHref = "https://example.test/docs/compare.html") {
   const values = new Map(Object.entries(initialStorage));
   const storage = {
     get length() { return values.size; },
@@ -86,7 +86,7 @@ async function createApp(initialStorage = {}) {
     form.elements[name] = { value: "" };
   }
   const window = new MockElement();
-  window.location = { href: "https://example.test/compare.html" };
+  window.location = { href: locationHref };
   const requests = [];
   const replies = [];
   let timerId = 0;
@@ -261,4 +261,26 @@ test("unconfigured local-only mode does not produce a false synchronization warn
   expectWarning(app, false);
   assert.equal(await app.context.pushHighlights(), false);
   assert.equal(app.requests.length, 0);
+});
+
+test("local preview opens the Simeon source and translation from the repository root", async () => {
+  const app = await createApp();
+  assert.equal(runInContext("documents.english", app.context), "../charlessimeon00moulgoog.pdf");
+  assert.equal(runInContext("documents.polish", app.context), "../build/pdf/Charles-Simeon-H-C-G-Moule.pdf");
+});
+
+test("GitHub Pages loads PDFs from the current repository's default branch", async () => {
+  const app = await createApp({}, "https://test-owner.github.io/new-biography/compare.html");
+  assert.equal(runInContext("documents.english", app.context),
+    "https://raw.githubusercontent.com/test-owner/new-biography/HEAD/charlessimeon00moulgoog.pdf");
+  assert.equal(runInContext("documents.polish", app.context),
+    "https://raw.githubusercontent.com/test-owner/new-biography/HEAD/build/pdf/Charles-Simeon-H-C-G-Moule.pdf");
+});
+
+test("settings from another book cannot activate synchronization for Simeon", async () => {
+  const app = await createApp(Object.fromEntries(
+    Object.entries(configuration).map(([key, value]) => [key.replace(prefix, "pdf-comparison:"), value])
+  ));
+  assert.equal(app.requests.length, 0);
+  assert.equal(runInContext("syncIsConfigured()", app.context), false);
 });

@@ -1,369 +1,108 @@
-# Przegląd tłumaczenia
+# Charles Simeon — przekład polski
 
-Pełny przegląd tłumaczenia zakończono 2026-10-11, a 2026-10-12 uzupełniono go po weryfikacji drugiego raportu AI. Zasadne uwagi wdrożono na gałęzi `codex/poprawki-review-2026-10-12`, wraz z ponownym eksportem PDF, EPUB, DOCX i HTML. Status wszystkich uwag, przyjęte odpowiedniki oraz sprostowania raportu znajdują się na początku [REVIEW.md](REVIEW.md).
+Repozytorium do tłumaczenia książki **Charles Simeon** autorstwa **H. C. G. Moule’a** (Handley Carr Glyn Moule). Tekst jest opracowywany po polsku w Markdownie Pandoca, po jednym pliku na część książki.
 
-# Pandoc book template
+**Status: przygotowanie do tłumaczenia.** Pliki w `chapters/` zawierają nagłówki i niewidoczne w eksportach wskazówki robocze. Nie zawierają jeszcze przekładu treści.
 
-[![CircleCI](https://circleci.com/gh/wikiti/pandoc-book-template.svg?style=shield)](https://circleci.com/gh/wikiti/pandoc-book-template)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wikiti/pandoc-book-template/blob/master/LICENSE.md)
+## Oryginał
 
-## Description
+- Tytuł: *Charles Simeon*.
+- Autor na stronie tytułowej: H. C. G. Moule, M.A.
+- Wydawca: Methuen & Co., London, 1892.
+- Seria: *English Leaders of Religion*.
+- Plik źródłowy: [charlessimeon00moulgoog.pdf](charlessimeon00moulgoog.pdf), 321 stron PDF.
 
-This repository contains a simple template for building [Pandoc](http://pandoc.org/) documents;
-Pandoc is a suite of tools to compile markdown files into readable files (PDF, EPUB, HTML...).
+Skan zawiera powtórzone strony początkowe. Przedmowa jest na stronach PDF **24–26** (duplikat: **16–18**), nota po przedmowie na stronie **27** (duplikat: **19**), a spis treści na stronie **28** (duplikat: **20**). Pierwszy rozdział zaczyna się na stronie PDF **30**, oznaczonej w druku jako strona **1**. Numery stron PDF liczymy od 1.
 
-## Usage
+Większość skanu nie ma warstwy tekstowej. Przy tłumaczeniu korzystaj z obrazu stron, a ewentualny OCR sprawdzaj ze skanem, szczególnie przy nazwiskach, datach, kursywie i przypisach.
 
-### Installing
+## Rozpoczęcie pracy
 
-Please, check [this page](http://pandoc.org/installing.html) for more information. On ubuntu, it
-can be installed as the *pandoc* package:
+1. Zacznij od [chapters/01-przedmowa.md](chapters/01-przedmowa.md). Szkielet pierwszego rozdziału znajduje się w [chapters/02-rozdzial-01-rodzina-i-szkola.md](chapters/02-rozdzial-01-rodzina-i-szkola.md).
+2. Tłumacz kolejne akapity, zastępując komentarz o statusie, gdy część będzie gotowa. Zasady pracy opisuje [AGENTS.md](AGENTS.md), a ustalone nazwy i terminy zapisuj w [TERMINOLOGIA.md](TERMINOLOGIA.md).
+3. Dodawaj dalsze pliki według [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md). Kolejność eksportu wynika z nazw plików, np. `03-rozdzial-02.md`, `04-rozdzial-03.md`.
+4. Po zmianach uruchom `make pdf`, a przed PR-em zaktualizuj wszystkie formaty przez `make book`. Zmienione eksporty dołącz do tego samego commita co Markdown.
 
-```sh
-sudo apt-get install pandoc
+Uwagi redakcyjne zapisuj w [REVIEW.md](REVIEW.md). Nie umieszczaj instrukcji roboczych w widocznym tekście książki. W razie potrzeby używaj komentarzy HTML `<!-- ... -->`, pomijanych w eksportach.
+
+## Struktura
+
+```text
+chapters/                         tłumaczenie w kolejności eksportu
+images/                           ilustracje i ewentualna przyszła okładka
+metadata.yml                      dane polskiego przekładu i wydania źródłowego
+templates/                        szablony PDF, EPUB, HTML i DOCX
+filters/                          filtry Pandoca do tabel i podziałów wierszy
+build/pdf/                        PDF polskiego przekładu
+build/epub/                       EPUB polskiego przekładu
+build/docx/                       DOCX polskiego przekładu
+docs/index.html                   HTML polskiego przekładu
+docs/compare.html                 porównywarka angielskiego i polskiego PDF-u
+tests/                            testy porównywarki
+.github/workflows/build.yml       automatyczne testy i eksporty
+charlessimeon00moulgoog.pdf        oryginalny skan
 ```
 
-This template uses [make](https://www.gnu.org/software/make/) to build the output files, so don't
-forget to install it too:
+## Wymagania
 
-```sh
-sudo apt-get install make
+Na Ubuntu / Debianie:
+
+```bash
+sudo apt-get update
+sudo apt-get install --no-install-recommends -y \
+  make pandoc fonts-dejavu-core lmodern texlive-fonts-recommended \
+  texlive-lang-polish texlive-plain-generic texlive-xetex
 ```
 
-To export to PDF files, make sure to install the following packages:
+Do lokalnego podglądu przez HTTP potrzebny jest Python 3, a do uruchomienia testów porównywarki Node.js z obsługą `node --test` (np. Node.js 22).
 
-```sh
-sudo apt-get install texlive-fonts-recommended texlive-xetex
+## Generowanie plików
+
+```bash
+make pdf     # build/pdf/Charles-Simeon-H-C-G-Moule.pdf
+make epub    # build/epub/Charles-Simeon-H-C-G-Moule.epub
+make docx    # build/docx/Charles-Simeon-H-C-G-Moule.docx
+make html    # docs/index.html
+make book    # wszystkie cztery formaty; także domyślne make i make all
+make test    # testy porównywarki PDF
 ```
 
-### Folder structure
+Nazwę wynikową ustawia `OUTPUT_FILENAME` w `Makefile`. Dane książki znajdują się w `metadata.yml`. Rok 1892 i wydawca Methuen & Co. opisują oryginał, a nie polskie wydanie.
 
-Here's a folder structure for a Pandoc book:
+Eksport EPUB działa bez okładki. Aby dodać własną, zapisz ją jako `images/cover.png` i odkomentuj `cover-image` w `metadata.yml`.
 
-```
-my-book/         # Root directory.
-|- build/        # Folder used to store builded (output) files.
-|- chapters/     # Markdowns files; one for each chapter.
-|- images/       # Images folder.
-|  |- cover.png  # Cover page for epub.
-|- metadata.yml  # Metadata content (title, author...).
-|- Makefile      # Makefile used for building our books.
-```
+`make clean` usuwa eksporty z `build/` i `docs/index.html`. Nie usuwa skanu ani Markdownu.
 
-### Setup generic data
+Opcjonalnie można zbudować wszystkie formaty w kontenerze poleceniem `./generate.sh` (wymaga Podmana). W środowisku Codex używaj bezpośrednio `make pdf` i `make book`.
 
-Edit the *metadata.yml* file to set configuration data (note that it must start and end with `---`):
+## Podgląd i porównywanie
 
-```yml
----
-title: My book title
-author: Daniel Herzog
-rights: MIT License
-lang: en-US
-tags: [pandoc, book, my-book, etc]
-abstract: |
-  Your summary.
-mainfont: DejaVu Sans
+Uruchom serwer z głównego katalogu repozytorium:
 
-# Filter preferences:
-# - pandoc-crossref
-linkReferences: true
----
+```bash
+python3 -m http.server 8000
 ```
 
-You can find the list of all available keys on
-[this page](http://pandoc.org/MANUAL.html#extension-yaml_metadata_block).
+- Książka HTML: <http://localhost:8000/docs/>.
+- Porównywarka PDF: <http://localhost:8000/docs/compare.html>.
 
-### Creating chapters
+Porównywarka otwiera skan angielski oraz wygenerowany polski PDF. Zakreślenia i ustawienia tej książki są przechowywane oddzielnie. Opcjonalna synchronizacja z GitHub wymaga osobnego repozytorium danych i tokenu podanego w ustawieniach porównywarki. Domyślna proponowana nazwa to `simeon-compare-data`, samo przygotowanie projektu nie tworzy tego repozytorium.
 
-Creating a new chapter is as simple as creating a new markdown file in the *chapters/* folder;
-you'll end up with something like this:
+Po opublikowaniu katalogu `docs/` przez GitHub Pages porównywarka pobiera PDF-y z domyślnej gałęzi tego samego repozytorium. Lokalne zmiany oglądaj przez lokalny serwer.
 
-```
-chapters/01-introduction.md
-chapters/02-installation.md
-chapters/03-usage.md
-chapters/04-references.md
-```
+## Kontrola przed pull requestem
 
-Pandoc and Make will join them automatically ordered by name; that's why the numeric prefixes are
-being used.
-
-All you need to specify for each chapter at least one title:
-
-```md
-# Introduction
-
-This is the first paragraph of the introduction chapter.
-
-## First
-
-This is the first subsection.
-
-## Second
-
-This is the second subsection.
-```
-
-Each title (*#*) will represent a chapter, while each subtitle (*##*) will represent a chapter's
-section. You can use as many levels of sections as markdown supports.
-
-#### Manual control over page ordering
-
-You may prefer to have manual control over page ordering instead of using numeric prefixes.
-
-To do so, replace `CHAPTERS = chapters/*.md` in the Makefile with your own order. For example:
-
-```
-CHAPTERS += $(addprefix ./chapters/,\
- 01-introduction.md\
- 02-installation.md\
- 03-usage.md\
- 04-references.md\
-)
-```
-
-#### Links between chapters
-
-Anchor links can be used to link chapters within the book:
-
-```md
-// chapters/01-introduction.md
-# Introduction
-
-For more information, check the [Usage] chapter.
-
-// chapters/02-installation.md
-# Usage
-
-...
-```
-
-If you want to rename the reference, use this syntax:
-
-```md
-For more information, check [this](#usage) chapter.
-```
-
-Anchor names should be downcased, and spaces, colons, semicolons... should be replaced with hyphens.
-Instead of `Chapter title: A new era`, you have: `#chapter-title-a-new-era`.
-
-#### Links between sections
-
-It's the same as anchor links:
-
-```md
-# Introduction
-
-## First
-
-For more information, check the [Second] section.
-
-## Second
-
-...
-```
-
-Or, with al alternative name:
-
-```md
-For more information, check [this](#second) section.
-```
-
-### Inserting objects
-
-Text. That's cool. What about images and tables?
-
-#### Insert an image
-
-Use Markdown syntax to insert an image with a caption:
-
-```md
-![A cool seagull.](images/seagull.png)
-```
-
-Pandoc will automatically convert the image into a figure, using the title (the text between the
-brackets) as a caption.
-
-If you want to resize the image, you may use this syntax, available since Pandoc 1.16:
-
-```md
-![A cool seagull.](images/seagull.png){ width=50% height=50% }
-```
-
-#### Insert a table
-
-Use markdown table, and use the `Table: <Your table description>` syntax to add a caption:
-
-```md
-| Index | Name |
-| ----- | ---- |
-| 0     | AAA  |
-| 1     | BBB  |
-| ...   | ...  |
-
-Table: This is an example table.
-```
-
-#### Insert an equation
-
-Wrap a LaTeX math equation between `$` delimiters for inline (tiny) formulas:
-
-```md
-This, $\mu = \sum_{i=0}^{N} \frac{x_i}{N}$, the mean equation, ...
-```
-
-Pandoc will transform them automatically into images using online services.
-
-If you want to center the equation instead of inlining it, use double `$$` delimiters:
-
-```md
-$$\mu = \sum_{i=0}^{N} \frac{x_i}{N}$$
-```
-
-[Here](https://www.codecogs.com/latex/eqneditor.php)'s an online equation editor.
-
-#### Cross references
-
-Originally, this template used LaTeX labels for auto numbering on images, tables, equations or
-sections, like this:
-
-```md
-Please, admire the gloriousnes of Figure \ref{seagull_image}.
-
-![A cool seagull.\label{seagull_image}](images/seagull.png)
-```
-
-**However, these references only works when exporting to a LaTeX-based format (i.e. PDF, LaTeX).**
-
-In case you need cross references support on other formats, this template now support cross
-references using [Pandoc filters](https://pandoc.org/filters.html). If you want to use them, use a
-valid plugin and with its own syntax.
-
-Using [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) is highly recommended, but
-there are other alternatives which use a similar syntax, like
-[pandoc-xnos](https://github.com/tomduck/pandoc-xnos).
-
-First, enable the filter on the *Makefile* by updating the `FILTER_ARGS` variable with your new
-filter(s):
-
-```make
-FILTER_ARGS = --filter pandoc-crossref
-```
-
-Then, you may use the filter cross references. For example, *pandoc-crossref*  uses
-`{#<type>:<id>}` for definitions and `@<type>:id` for referencing. Some examples:
-
-```md
-List of references:
-
-- Check @fig:seagull.
-- Check @tbl:table.
-- Check @eq:equation.
-
-List of elements to reference:
-
-![A cool seagull](images/seagull.png){#fig:seagull}
-
-$$ y = mx + b $$ {#eq:equation}
-
-| Index | Name |
-| ----- | ---- |
-| 0     | AAA  |
-| 1     | BBB  |
-| ...   | ...  |
-
-Table: This is an example table. {#tbl:table}
-```
-
-Check the desired filter settings and usage for more information
-([pandoc-crossref usage](http://lierdakil.github.io/pandoc-crossref/)).
-
-#### Content filters
-
-If you need to modify the MD content before passing it to pandoc, you may use `CONTENT_FILTERS`. By
-setting this makefile variable, it will be passed to the markdown content before passing it to
-pandoc. For example, to replace all occurrences of `@pagebreak` with
-`<div style="page-break-before: always;"></div>` you may use a `sed` filter:
-
-```
-CONTENT_FILTERS = sed 's/@pagebreak/"<div style=\"page-break-before: always;\"><\/div>"/g'
-```
-
-To use multiple filters, you may include multiple pipes on the `CONTENT_FILTERS` variable:
-
-```
-CONTENT_FILTERS = \
-  sed 's/@pagebreak/"<div style=\"page-break-before: always;\"><\/div>"/g' | \
-  sed 's/@image/[Cool image](\/images\/image.png)/g'
-```
-
-### Output
-
-This template uses *Makefile* to automatize the building process. Instead of using the *pandoc cli
-util*, we're going to use some *make* commands.
-
-#### Export to PDF
-
-Please note that PDF file generation requires some extra dependencies (~ 800 MB):
-
-```sh
-sudo apt-get install texlive-xetex ttf-dejavu
-```
-
-After installing the dependencies, use this command:
-
-```sh
+```bash
 make pdf
+test -s build/pdf/Charles-Simeon-H-C-G-Moule.pdf
+make book
+make test
+git diff --check
+git status --short
 ```
 
-The generated file will be placed in *build/pdf*.
+Sprawdź wizualnie zmienione strony PDF-u. W commicie uwzględnij Markdown, metadane lub szablony oraz zmienione eksporty. Workflow GitHub Actions sprawdza testy, buduje wszystkie formaty i udostępnia je jako artefakt `charles-simeon`.
 
-#### Export to EPUB
+## Zasady udostępniania
 
-Use this command:
-
-```sh
-make epub
-```
-
-The generated file will be placed in *build/epub*.
-
-#### Export to HTML
-
-Use this command:
-
-```sh
-make html
-```
-
-The generated file(s) will be placed in *build/html*.
-
-#### Export to DOCX
-
-Use this command:
-
-```sh
-make docx
-```
-
-The generated file(s) will be placed in *build/docx*.
-
-#### Extra configuration
-
-If you want to configure the output, you'll probably have to look the
-[Pandoc Manual](http://pandoc.org/MANUAL.html) for further information about pdf (LaTeX) generation,
-custom styles, etc, and modify the Makefile file accordingly.
-
-#### Templates
-
-Output files are generated using [pandoc templates](https://pandoc.org/MANUAL.html#templates). All
-templates are located under the `templates/` folder, and may be modified as you will. Some basic
-format templates are already included on this repository, ion case you need something to start
-with.
-
-## References
-
-- [Pandoc](http://pandoc.org/)
-- [Pandoc Manual](http://pandoc.org/MANUAL.html)
-- [Wikipedia: Markdown](http://wikipedia.org/wiki/Markdown)
+Zasady udostępniania polskiego tłumaczenia pozostają do ustalenia przed publikacją. Repozytorium nie przypisuje przekładowi licencji automatycznie. Plik `docs/vendor/pdfjs/LICENSE` dotyczy dołączonej biblioteki PDF.js.

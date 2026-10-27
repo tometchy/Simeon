@@ -1,18 +1,22 @@
 ---
-title: Bóg zachował swój Tekst!
-subtitle: Boża ochrona Nowego Testamentu
-cover-image: images/cover.png
-edition: Czwarta Edycja
-author: Wilbur N. Pickering
-rights: "Licencja: Uznanie autorstwa - Na tych samych warunkach 4.0 Międzynarodowa CC BY-SA 4.0"
+title: Charles Simeon
+author: H. C. G. Moule
 lang: pl-PL
 mainlang: polish
-otherlang: polish
-tags: [pandoc, book]
+otherlang: english
+toc-title: Spis treści
 mainfont: DejaVu Sans
 mainfontoptions:
   - AutoFakeSlant=0.2
-# Filter preferences:
-# - pandoc-crossref
-linkReferences: true
+tags: [Charles Simeon, H. C. G. Moule, biografia, tłumaczenie]
+source-title: Charles Simeon
+source-author: Handley Carr Glyn Moule
+source-publisher: Methuen & Co., London
+source-year: 1892
+source-language: en-GB
+source-file: charlessimeon00moulgoog.pdf
+# Rok i wydawca powyżej dotyczą oryginału, nie polskiego przekładu.
+# Przed publikacją uzupełnij zasady udostępniania polskiego tłumaczenia.
+# Opcjonalna okładka: dodaj images/cover.png i odkomentuj poniższą linię.
+# cover-image: images/cover.png
 ---
