@@ -4,6 +4,15 @@
 
 Użytkownik zlecił tłumaczenie całej pozostałej książki w sposób wierny oryginałowi i piękny po polsku, z kontrolą skanu oraz ciągłym zapisem umożliwiającym wznowienie po wyczerpaniu limitu. „Kontynuuj” oznacza dalszą pracę nad tym zadaniem. Poprzednie ograniczenie do rozdziału I poniżej jest wyłącznie zapisem historycznym.
 
+### Aktualizacja 2026-11-13 — porównywarka i instrukcja Pages
+
+- Użytkownik odwołał wymóg Astra / Ultra. Usunięto z `AGENTS.md` wymóg konkretnego modelu i obowiązek sprawdzania jego metadanych. Starsze wzmianki o modelu poniżej pozostają historią pracy.
+- Repozytorium ma już remote `origin`: `git@github.com:tometchy/Simeon.git`, gałąź domyślna `master`. Wcześniejsza informacja o braku adresu repozytorium jest nieaktualna.
+- Sprawdzono `docs/compare.html`: lokalnie otwiera `charlessimeon00moulgoog.pdf` (321 stron) i `build/pdf/Charles-Simeon-H-C-G-Moule.pdf` (176 stron), na Pages pobiera te same ścieżki z `raw.githubusercontent.com` z gałęzi domyślnej rozpoznanego repozytorium. Kod porównywarki nie wymagał zmian.
+- W README zapisano kroki publikacji `master` / `/docs` oraz adresy książki i porównywarki. Nie zmieniono ustawień Pages na GitHubie, nie potwierdzono wdrożenia strony.
+- `make book`, `make test` i `git diff --check` zakończone powodzeniem. Przebudowanie zmieniło tylko daty i UUID eksportów, tekst i współrzędne wszystkich stron PDF identyczne. Zachowano poprzednie eksporty, bez zmian treści książki i bez potrzeby powtarzania jej przeglądu wizualnego.
+- Gałąź zmian instrukcji: `codex/compare-pages-instructions`. Status PR-a sprawdzać przez GitHub API.
+
 ### Wznowienie 2026-11-13 — kontrola po poprawieniu podpisów
 
 - Potwierdzono własną turę jako `gpt-6-astra` / `ultra`; trzej agenci także potwierdzili własne metadane Astra Ultra. Pierwszy pomiar: 09:14:54 UTC. Ostatni pomiar poprzedniej sesji: 2026-11-12 21:40:39 UTC; późniejszych minut nie zmierzono, przerwy limitowej nie zaliczać do pracy.

@@ -33,8 +33,6 @@ Wstępne strony skanu się powtarzają: przedmowa znajduje się na stronach PDF 
 
 ## Odporność na przerwanie i wznawianie
 
-- Ustalenie użytkownika z 2026-11-06: pracuj wyłącznie z modelem Astra i poziomem rozumowania Ultra. Na początku wznowienia sprawdź metadane bieżącej tury. Jeśli model lub poziom jest inny albo nie można ich potwierdzić, zatrzymaj pracę i dopytaj użytkownika. Nie przełączaj samowolnie na inny model. Zasada obejmuje również agentów pomocniczych.
-- W lokalnym Codex metadane można sprawdzić w ostatnim rekordzie `turn_context` pliku sesji w `~/.codex/sessions/`, odpowiadającego bieżącemu `CODEX_THREAD_ID`: pola `payload.model` i `payload.effort`. Sprawdzaj własną turę, nie ustawienie domyślne w `config.toml` ani metadane innego agenta. Nie wypisuj całej zawartości sesji lub konfiguracji.
 - Kompaktuj kontekst rozmowy, gdy jest to potrzebne i dostępne. Przed kompakcją zapisz na dysku bieżący tekst, punkt wznowienia, ustalenia i niewykonane kontrole; nie polegaj na samej historii rozmowy.
 - Zakładaj, że limit tokenów lub awaria może przerwać pracę w dowolnej chwili. Zapisuj ukończone akapity na dysku na bieżąco, najpóźniej po 1–2 stronach źródła. Nie pozostawiaj większej partii przekładu wyłącznie w rozmowie lub pamięci agenta.
 - Po każdym zapisanym fragmencie aktualizuj `POSTEP.md`: plik rozdziału, zakres stron PDF i druku, ostatni ukończony akapit (krótki cytat z oryginału), dokładne miejsce kontynuacji, stan porównania ze skanem i pozostałe kontrole. Najpierw zapisz tekst, potem stan, aby ewentualne przerwanie nie zawyżyło postępu.

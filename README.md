@@ -2,7 +2,7 @@
 
 Repozytorium do tłumaczenia książki **Charles Simeon** autorstwa **H. C. G. Moule’a** (Handley Carr Glyn Moule). Tekst jest opracowywany po polsku w Markdownie Pandoca, po jednym pliku na część książki.
 
-**Status: cały przekład i kontrola eksportów ukończone.** Przedmowa, nota i rozdziały I–XVII przeszły niezależne porównanie ze skanem. PDF ma 176 stron, wszystkie objęto kontrolą wizualną, a EPUB, HTML i DOCX sprawdzono technicznie. Publikacja PR-a oczekuje na wskazanie repozytorium GitHub. Aktualny stan opisuje [POSTEP.md](POSTEP.md), a zakres książki — [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md).
+**Status: cały przekład i kontrola eksportów ukończone.** Przedmowa, nota i rozdziały I–XVII przeszły niezależne porównanie ze skanem. PDF ma 176 stron, wszystkie objęto kontrolą wizualną, a EPUB, HTML i DOCX sprawdzono technicznie. Repozytorium GitHub: [tometchy/Simeon](https://github.com/tometchy/Simeon). Aktualny stan opisuje [POSTEP.md](POSTEP.md), a zakres książki — [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md).
 
 Gotowe pliki: [PDF](build/pdf/Charles-Simeon-H-C-G-Moule.pdf), [EPUB](build/epub/Charles-Simeon-H-C-G-Moule.epub), [DOCX](build/docx/Charles-Simeon-H-C-G-Moule.docx), [HTML](docs/index.html).
 
@@ -93,6 +93,26 @@ python3 -m http.server 8000
 Porównywarka otwiera skan angielski oraz wygenerowany polski PDF. Zakreślenia i ustawienia tej książki są przechowywane oddzielnie. Opcjonalna synchronizacja z GitHub wymaga osobnego repozytorium danych i tokenu podanego w ustawieniach porównywarki. Domyślna proponowana nazwa to `simeon-compare-data`, samo przygotowanie projektu nie tworzy tego repozytorium.
 
 Po opublikowaniu katalogu `docs/` przez GitHub Pages porównywarka pobiera PDF-y z domyślnej gałęzi tego samego repozytorium. Lokalne zmiany oglądaj przez lokalny serwer.
+
+## Publikacja w GitHub Pages
+
+Repozytorium `tometchy/Simeon` jest przygotowane do publikacji katalogu `docs/`:
+
+1. Otwórz [Settings → Pages](https://github.com/tometchy/Simeon/settings/pages).
+2. W **Build and deployment → Source** wybierz **Deploy from a branch**.
+3. Wybierz gałąź **master**, katalog **/docs** i kliknij **Save**.
+4. Poczekaj na zakończenie wdrożenia **pages build and deployment** w zakładce **Actions**.
+
+Po pomyślnym wdrożeniu książka będzie dostępna pod adresem <https://tometchy.github.io/Simeon/>, a porównywarka pod <https://tometchy.github.io/Simeon/compare.html>.
+
+Porównywarka na tym adresie pobiera:
+
+- angielski oryginał: <https://raw.githubusercontent.com/tometchy/Simeon/HEAD/charlessimeon00moulgoog.pdf> (321 stron),
+- polski przekład: <https://raw.githubusercontent.com/tometchy/Simeon/HEAD/build/pdf/Charles-Simeon-H-C-G-Moule.pdf> (176 stron).
+
+Nie trzeba kopiować PDF-ów do `docs/`. Repozytorium musi być publiczne, aby przeglądarka mogła pobrać te pliki bez logowania. Po zmianach przekładu uruchom `make book` i zatwierdź eksporty wraz z Markdownem na gałęzi `master` (np. przez scalenie PR-a). Aktualizacja `docs/` uruchomi ponowne wdrożenie Pages. Workflow `Build book` sprawdza i generuje pliki jako artefakt, ale sam ich nie publikuje ani nie zapisuje w repozytorium.
+
+Instrukcja GitHub: [konfiguracja źródła publikacji Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 ## Kontrola przed pull requestem
 
