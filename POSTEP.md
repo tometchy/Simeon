@@ -11,7 +11,7 @@ Użytkownik zlecił tłumaczenie całej pozostałej książki w sposób wierny o
 - Sprawdzono `docs/compare.html`: lokalnie otwiera `charlessimeon00moulgoog.pdf` (321 stron) i `build/pdf/Charles-Simeon-H-C-G-Moule.pdf` (176 stron), na Pages pobiera te same ścieżki z `raw.githubusercontent.com` z gałęzi domyślnej rozpoznanego repozytorium. Kod porównywarki nie wymagał zmian.
 - W README zapisano kroki publikacji `master` / `/docs` oraz adresy książki i porównywarki. Nie zmieniono ustawień Pages na GitHubie, nie potwierdzono wdrożenia strony.
 - `make book`, `make test` i `git diff --check` zakończone powodzeniem. Przebudowanie zmieniło tylko daty i UUID eksportów, tekst i współrzędne wszystkich stron PDF identyczne. Zachowano poprzednie eksporty, bez zmian treści książki i bez potrzeby powtarzania jej przeglądu wizualnego.
-- Gałąź zmian instrukcji: `codex/compare-pages-instructions`. Status PR-a sprawdzać przez GitHub API.
+- Gałąź zmian instrukcji: `codex/compare-pages-instructions`, opublikowana w `origin`. Utworzenie PR-a przez integrację GitHub zakończyło się błędem `403 Resource not accessible by integration`; PR nie został utworzony. Lokalnie brak GitHub CLI i dostępnych poświadczeń HTTPS do alternatywnego wywołania API. Kontynuacja: utworzyć PR z tej gałęzi do `master`, a publikację Pages włączyć według README.
 
 ### Wznowienie 2026-11-13 — kontrola po poprawieniu podpisów
 
