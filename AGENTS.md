@@ -14,6 +14,7 @@ To repozytorium służy do tłumaczenia z angielskiego na polski książki *Char
 6. Cytaty biblijne tłumacz samodzielnie i wiernie z tekstu przytoczonego przez autora, bez zastępowania ich gotowym polskim przekładem. Zachowuj wielkość liter oryginalnego cytatu, także w tytułach i zaimkach.
 7. Nawiasy autora zachowuj, preferując okrągłe, a kwadratowe stosuj przy nawiasach wewnątrz nawiasów. Nie zmieniaj nawiasów należących do składni Markdownu.
 8. Preferuj przecinki zamiast średników, gdy można to zrobić bez utraty sensu i struktury wypowiedzi.
+9. Przekład ma być zarazem wierny i piękny po polsku: układaj zdania naturalnie, dbaj o rytm i czytelność, unikaj kalk składniowych. Poprawa stylu nie upoważnia do pomijania szczegółów, osłabiania sądów autora ani dopisywania wyjaśnień.
 
 ## Markdown i przypisy
 
@@ -32,12 +33,17 @@ Wstępne strony skanu się powtarzają: przedmowa znajduje się na stronach PDF 
 
 ## Odporność na przerwanie i wznawianie
 
+- Ustalenie użytkownika z 2026-11-06: pracuj wyłącznie z modelem Astra i poziomem rozumowania Ultra. Na początku wznowienia sprawdź metadane bieżącej tury. Jeśli model lub poziom jest inny albo nie można ich potwierdzić, zatrzymaj pracę i dopytaj użytkownika. Nie przełączaj samowolnie na inny model. Zasada obejmuje również agentów pomocniczych.
+- W lokalnym Codex metadane można sprawdzić w ostatnim rekordzie `turn_context` pliku sesji w `~/.codex/sessions/`, odpowiadającego bieżącemu `CODEX_THREAD_ID`: pola `payload.model` i `payload.effort`. Sprawdzaj własną turę, nie ustawienie domyślne w `config.toml` ani metadane innego agenta. Nie wypisuj całej zawartości sesji lub konfiguracji.
+- Kompaktuj kontekst rozmowy, gdy jest to potrzebne i dostępne. Przed kompakcją zapisz na dysku bieżący tekst, punkt wznowienia, ustalenia i niewykonane kontrole; nie polegaj na samej historii rozmowy.
 - Zakładaj, że limit tokenów lub awaria może przerwać pracę w dowolnej chwili. Zapisuj ukończone akapity na dysku na bieżąco, najpóźniej po 1–2 stronach źródła. Nie pozostawiaj większej partii przekładu wyłącznie w rozmowie lub pamięci agenta.
 - Po każdym zapisanym fragmencie aktualizuj `POSTEP.md`: plik rozdziału, zakres stron PDF i druku, ostatni ukończony akapit (krótki cytat z oryginału), dokładne miejsce kontynuacji, stan porównania ze skanem i pozostałe kontrole. Najpierw zapisz tekst, potem stan, aby ewentualne przerwanie nie zawyżyło postępu.
 - Oddzielaj statusy: zapisany przekład, przekład sprawdzony ze skanem, wygenerowane eksporty, przegląd wizualny i utworzony PR. Nie oznaczaj części jako gotowej, dopóki wymagane kontrole się nie zakończą.
 - Przy wznowieniu przeczytaj `POSTEP.md`, `PLAN-TLUMACZENIA.md`, `REVIEW.md` i `git status --short`, a następnie porównaj zapisany koniec rozdziału ze źródłem. Pliki na dysku są rozstrzygające, jeśli przerwanie nastąpiło między zapisem tekstu a aktualizacją postępu.
 - Zapisuj istotne wątpliwości i ustalenia od razu w `REVIEW.md` oraz `TERMINOLOGIA.md`. Pliki tymczasowe i wiadomości agentów nie mogą być jedynym miejscem przechowywania potrzebnych ustaleń.
 - Zapisuj rzeczywiste czasy etapów i przerw, jeśli zadanie obejmuje oszacowanie czasu. Przerw wynikających z limitów nie traktuj jako czasu aktywnej pracy.
+- Od 2026-10-28 zakres obejmuje całą pozostałą książkę, wraz z zaległą przedmową i notą. Wiadomość „kontynuuj” oznacza wznowienie tego zadania od zapisanego miejsca, bez ponownego uzgadniania zakresu.
+- Przy pracy równoległej każdy agent zapisuje własny punkt wznowienia i uwagi w osobnym pliku `postep/rozdzial-NN.md`. Agent prowadzący scala stan w `POSTEP.md`, a ustalenia terminologiczne i uwagi w plikach wspólnych. Nie nadpisuj plików innego agenta.
 
 ## Generowanie i weryfikacja
 

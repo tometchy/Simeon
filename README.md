@@ -2,7 +2,9 @@
 
 Repozytorium do tłumaczenia książki **Charles Simeon** autorstwa **H. C. G. Moule’a** (Handley Carr Glyn Moule). Tekst jest opracowywany po polsku w Markdownie Pandoca, po jednym pliku na część książki.
 
-**Status: tłumaczenie w toku.** Rozdział I jest przetłumaczony, a stan jego kontroli opisuje [POSTEP.md](POSTEP.md). Przedmowa pozostaje szkieletem, pozostałe rozdziały czekają na tłumaczenie. Zakres i kolejność prac opisuje [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md).
+**Status: cały przekład i kontrola eksportów ukończone.** Przedmowa, nota i rozdziały I–XVII przeszły niezależne porównanie ze skanem. PDF ma 176 stron, wszystkie objęto kontrolą wizualną, a EPUB, HTML i DOCX sprawdzono technicznie. Publikacja PR-a oczekuje na wskazanie repozytorium GitHub. Aktualny stan opisuje [POSTEP.md](POSTEP.md), a zakres książki — [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md).
+
+Gotowe pliki: [PDF](build/pdf/Charles-Simeon-H-C-G-Moule.pdf), [EPUB](build/epub/Charles-Simeon-H-C-G-Moule.epub), [DOCX](build/docx/Charles-Simeon-H-C-G-Moule.docx), [HTML](docs/index.html).
 
 ## Oryginał
 
@@ -18,7 +20,7 @@ Większość skanu nie ma warstwy tekstowej. Przy tłumaczeniu korzystaj z obraz
 
 ## Rozpoczęcie pracy
 
-1. Najpierw przeczytaj [POSTEP.md](POSTEP.md) i sprawdź `git status --short`, aby wznowić przerwaną pracę bez pominięć ani powtórzeń. Pierwszy rozdział znajduje się w [chapters/02-rozdzial-01-rodzina-i-szkola.md](chapters/02-rozdzial-01-rodzina-i-szkola.md), a nieprzetłumaczona jeszcze przedmowa w [chapters/01-przedmowa.md](chapters/01-przedmowa.md).
+1. Najpierw przeczytaj [POSTEP.md](POSTEP.md) i sprawdź `git status --short`, aby wznowić przerwaną pracę bez pominięć ani powtórzeń. Pierwszy rozdział znajduje się w [chapters/02-rozdzial-01-rodzina-i-szkola.md](chapters/02-rozdzial-01-rodzina-i-szkola.md), a przedmowa wraz z notą w [chapters/01-przedmowa.md](chapters/01-przedmowa.md).
 2. Tłumacz kolejne akapity, zastępując komentarz o statusie, gdy część będzie gotowa. Zasady pracy opisuje [AGENTS.md](AGENTS.md), a ustalone nazwy i terminy zapisuj w [TERMINOLOGIA.md](TERMINOLOGIA.md).
 3. Dodawaj dalsze pliki według [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md). Kolejność eksportu wynika z nazw plików, np. `03-rozdzial-02.md`, `04-rozdzial-03.md`.
 4. Po zmianach uruchom `make pdf`, a przed PR-em zaktualizuj wszystkie formaty przez `make book`. Zmienione eksporty dołącz do tego samego commita co Markdown.

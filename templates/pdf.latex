@@ -419,6 +419,8 @@ $endif$
 $endif$
 
 \begin{document}
+% Set exceptions after the document's main language has been selected.
+\hyphenation{wspom-nie-niach dwu-dzie-sto-ośmio-let-nie-go pod-po-rząd-ko-wa-niu}
 $if(has-frontmatter)$
 \frontmatter
 $endif$
