@@ -69,3 +69,6 @@ W środowisku Codex używaj bezpośrednio `make pdf`, bez `generate.sh` i Podman
 ## Kończenie pracy
 
 Po zmianach w repozytorium utwórz pull request i zakończ odpowiedź bezpośrednim, klikalnym linkiem. Przed podaniem linku zweryfikuj przez GitHub CLI lub API, że PR rzeczywiście istnieje, jest otwarty oraz wskazuje właściwe repozytorium i gałęzie. Sam tytuł i opis nie oznaczają utworzenia PR-a.
+
+## Working with rate limits
+I have rate limits, always be prepared that you're work may be interrupted out of the sudden, and that you'll need to continue after rate limits reset.
