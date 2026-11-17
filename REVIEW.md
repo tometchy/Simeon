@@ -2,7 +2,9 @@
 
 ## Nowe lokalne review, 2026-11-15–17
 
-Ukończono ponowne porównanie całej książki ze skanem (2026-11-17), z ograniczeniami zasłoniętych fragmentów opisanymi w raportach. Wynik: 21 uwag, 10 P2 i 11 P3. Raporty: [indeks](review/2026-11-15/README.md). Nie wdrażamy proponowanych korekt. Nie publikować gałęzi i nie tworzyć PR-a. Poniższe starsze deklaracje kompletności dotyczą wcześniejszej kontroli. Nowe ustalenia obejmują m.in. neutral → „naturalna” (III), conscientious → „świadoma” (VI), pominięcie Close’a (XV). Szczegóły i stopień pewności w raportach.
+Ukończono ponowne porównanie całej książki ze skanem (2026-11-17), z ograniczeniami zasłoniętych fragmentów opisanymi w raportach. Po uzupełnieniu o zweryfikowane uwagi innego AI wynik wynosi **23 uwagi, 10 P2 i 13 P3** (wcześniej 21, 10 P2 i 11 P3). Raporty: [indeks](review/2026-11-15/README.md). Nie wdrażamy proponowanych korekt. Nie publikować gałęzi i nie tworzyć PR-a. Poniższe starsze deklaracje kompletności dotyczą wcześniejszej kontroli. Nowe ustalenia obejmują m.in. neutral → „naturalna” (III), conscientious → „świadoma” (VI), pominięcie Close’a (XV). Szczegóły i stopień pewności w raportach.
+
+Weryfikacja wszystkich czterech propozycji z `Simeon_review_2026-11-16/` zakończona 2026-11-17: dodano I-02 (zasadna korekta osoby gramatycznej we wprowadzeniu do cytatu, P3) i PRZ-01 (opcjonalna poprawa naturalności wyrażenia wdzięczności, P3). Druga propozycja przedmowy nie wykazuje błędu składni, a wielka litera w XIII pochodzi ze źródła. Nie przyjęto tych dwóch jako koniecznych poprawek. Potwierdzono deklarowane liczby plików i przypisów. Skrypt może zakończyć się błędem po zapisaniu zmian w książce; dołączony test jest kontrolą struktury, nie wierności ani kompletności przekładu. [Pełne rozstrzygnięcia i ograniczenia narzędzi](review/2026-11-15/weryfikacja-review-2026-11-16.md). Pakiet pozostał bez zmian i nie został zastosowany.
 
 Korekty wcześniejszych ustaleń review (bez wdrożenia do przekładu):
 

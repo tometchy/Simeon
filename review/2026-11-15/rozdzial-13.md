@@ -37,3 +37,7 @@ PDF237–238/druk208–209 porównane; końcowy podpis i przypis zgodne. Niejedn
 ## Krytyczna kontrola uwag, 2026-11-16
 
 XIII-01 obniżono z P2 do P3 i wydzielono jako propozycję leksykalną. XIII-02 pozostaje pewnym opuszczeniem: słowo *poor* jest czytelne w źródle i nie ma odpowiednika w przekładzie.
+
+## Weryfikacja propozycji z pakietu innego AI, 2026-11-17
+
+Zmiana drugiego „Mój” na „mój” w linii 97 nie jest konieczną korektą: PDF235/druk206 ma wyraźnie „My dear Mr Simeon, My brother…”. Polski tekst zachowuje wielką literę oryginału na początku treści listu po pozdrowieniu. Nie dodano nowej usterki. [Pełna ocena](weryfikacja-review-2026-11-16.md). Przekład bez zmian.

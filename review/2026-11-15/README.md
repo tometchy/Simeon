@@ -1,6 +1,6 @@
 # Review całego przekładu — 15–17 listopada 2026
 
-**Ukończono review przedmowy, noty i wszystkich 17 rozdziałów.** Zapisano **21 uwag: 10 P2 i 11 P3**, jedną nową rozbieżność samego oryginału i dwa sprostowania wcześniejszych ustaleń review. Jedno zgłoszenie wycofano po weryfikacji i nie jest wliczane.
+**Ukończono review przedmowy, noty i wszystkich 17 rozdziałów oraz weryfikację czterech propozycji z pakietu innego AI.** Zapisano **23 uwagi: 10 P2 i 13 P3**, jedną nową rozbieżność samego oryginału i dwa sprostowania wcześniejszych ustaleń review. Jedno zgłoszenie z pierwotnego review wycofano po weryfikacji i nie jest wliczane. Liczba uwag obejmuje również opcjonalne sugestie stylistyczne.
 
 Baza: `94ebe926811ef1322dd4dcfddb3c954fbf20e177`. Lokalna gałąź: `codex/review-calosc-2026-11-15`. Przekład, źródłowy PDF i eksporty pozostały bez zmian. **Nie pushować gałęzi i nie tworzyć PR-a** — takie jest polecenie użytkownika dla tego zadania. Raport zawiera propozycje do rozpatrzenia, nie wdrożone poprawki.
 
@@ -24,6 +24,8 @@ P2 oznacza konkretną korektę znaczenia lub odczytu. P3 obejmuje drobne opuszcz
 | XV-02 | P2 | [złagodzenie opisu twarzy](rozdzial-15.md) |
 | XV-04 | P2 | [pominięte nazwisko uczestnika jubileuszu](rozdzial-15.md) |
 | XVII-01 | P2 | [zgubione dawne przeznaczenie przegrody](rozdzial-17.md) |
+| PRZ-01 | P3 | [opcjonalne wygładzenie wyrażenia wdzięczności; uwaga zewnętrzna](weryfikacja-review-2026-11-16.md) |
+| I-02 | P3 | [osoba gramatyczna we wprowadzeniu do wspomnienia; uwaga zewnętrzna](weryfikacja-review-2026-11-16.md) |
 | IV-01 | P3 | [nieujednolicone określenie empor](rozdzial-04.md) |
 | V-01 | P3 | [rozszerzona kursywa w dacie listu Martyna](rozdzial-05.md) |
 | VIII-01 | P3 | [pominięte ograniczenie liczby zapraszanych](rozdzial-08.md) |
@@ -37,6 +39,12 @@ P2 oznacza konkretną korektę znaczenia lub odczytu. P3 obejmuje drobne opuszcz
 | T-02 | P3 | [Archdeacon/archidiakon](kontrole-przekrojowe.md) |
 
 **XV-03 wycofana:** imię rozmówcy i kursywa są obecne w bazowej wersji przekładu. Nie przywracać ich ponownie. XVI-01 po niezależnej ocenie jest sugestią P3, nie dowiedzionym błędem znaczenia. [Raport niezależnej weryfikacji](weryfikacja-uwag-prowadzacego.md).
+
+## Weryfikacja pakietu innego AI
+
+Pakiet `Simeon_review_2026-11-16/` sprawdzono 2026-11-17, na stanie wejściowym `5b9546a`. Wszystkie cztery wskazane miejsca porównano z obrazami źródła. Uwaga o zmianie osoby w rozdziale I jest zasadna jako korekta językowa; pierwsza propozycja przedmowy jest opcjonalną redakcją stylu. Druga propozycja przedmowy nie naprawia błędnej składni, a wielka litera w liście z XIII występuje już w oryginale. Do wcześniejszych 21 uwag dołączono zatem dwie P3.
+
+Potwierdzono liczby plików i przypisów podane w pakiecie. Izolowane próby wykazały, że skrypt może zwrócić błąd po zapisaniu zmian, a test integralności nie dowodzi kompletności książki. Skryptu i testu nie wdrożono. [Pełne rozstrzygnięcia EN/PL, dowody i ocena narzędzi](weryfikacja-review-2026-11-16.md).
 
 ## Pokrycie kontroli
 

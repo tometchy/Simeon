@@ -19,4 +19,8 @@ Porównanie tekstu Markdown ze skanem źródła, OCR wyłącznie pomocniczo. Num
 
 ## Wątpliwości i ograniczenia
 
-Obejrzano i porównano wszystkie strony PDF30–40/druk1–11. Jedna potwierdzona uwaga P2 (I-01). Nie wykryto opuszczonych akapitów, wersów Cowpera ani przypisów. Historyczne terminy pozostawiono zgodnie z glosariuszem. Nie sprawdzano ponownie składu eksportów.
+Obejrzano i porównano wszystkie strony PDF30–40/druk1–11. Jedna potwierdzona uwaga P2 (I-01) oraz, po uzupełnieniu poniżej, jedna językowa P3 (I-02). Nie wykryto opuszczonych akapitów, wersów Cowpera ani przypisów. Historyczne terminy pozostawiono zgodnie z glosariuszem. Nie sprawdzano ponownie składu eksportów.
+
+## Uzupełnienie po weryfikacji zewnętrznego review, 2026-11-17
+
+**I-02 — P3:** linia 21, PDF34/druk5. Polskie „Simeon… «pomyślał… to byłem nim ja»” niezręcznie przechodzi od trzeciej do pierwszej osoby. Angielskie „thought” nie ujawnia osoby gramatycznej, a Moule włącza początek wspomnienia do narracji. Zasadna jest propozycja „Simeon wspominał: «Pomyślałem…»”, która zachowuje sens i zapewnia spójność z dalszą relacją pierwszoosobową. To korekta językowa, nie błąd znaczenia. [Pełny cytat EN/PL i uzasadnienie](weryfikacja-review-2026-11-16.md). Nie wdrożono.
