@@ -27,4 +27,4 @@ Prefiks nazwy pliku oznacza kolejność eksportu. Numer rozdziału w książce j
 
 ## Najbliższy etap
 
-Cała przedmowa, nota i rozdziały I–XVII zostały przetłumaczone i niezależnie porównane ze źródłem. Nie pozostał dalszy fragment tekstu głównego do tłumaczenia. Kontrola składu i wszystkich eksportów zakończona 2026-11-13. Do zamknięcia publikacji pozostaje wskazanie docelowego repozytorium GitHub, wysłanie gałęzi i utworzenie oraz weryfikacja PR-a. Bieżący stan opisuje `POSTEP.md`, szczegóły kontroli pozostają w `postep/`.
+Cała przedmowa, nota i rozdziały I–XVII zostały przetłumaczone. Kontrola składu i eksportów poprzedniej wersji zakończyła się 2026-11-13. Ponowne review całego przekładu wykonano w dniach 2026-11-15–17, wyłącznie lokalnie na gałęzi `codex/review-calosc-2026-11-15`, **bez pushowania i bez PR-a**. Raporty i sugestie nie są wdrażane do tekstu książki. Bieżący stan: `POSTEP.md`, indeks: [review/2026-11-15/README.md](review/2026-11-15/README.md). Wiersze statusu w tabeli opisują wcześniejsze zakończenie tłumaczenia i kontroli eksportów, nie brak uwag w nowym review.

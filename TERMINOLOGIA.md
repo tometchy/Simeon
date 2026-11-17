@@ -97,3 +97,9 @@ Przy pierwszym wystąpieniu rozstrzygnij i zapisz sposób oddawania nazw kolegi�
 - Trust Fund — Fundusz Powierniczy (opisowe określenie w XVII, odróżnione od nazwy Simeon Trust).
 
 - Scrupulous conscience — sumienie skrupulanckie (XIV, przeciwstawione sumieniu czułemu); irregular w sporze kościelnym — odstępujący od przyjętych reguł, nie nieregularny w czasie.
+
+## Uwagi z lokalnego review 2026-11-15–17 — bez wdrażania zmian
+
+Nie przyjęto nowych odpowiedników. Wykryto odstępstwa od istniejących ustaleń: galerie/empory (IV-01), Canon/kanonik (T-01) oraz archidiakon/Archdeacon (T-02). Lokalizacje i proponowane ujednolicenia: [raport przekrojowy](review/2026-11-15/kontrole-przekrojowe.md). Nie zmienia to zasad zachowania nieuzgodnionych nazw urzędów.
+
+`pensioner soldier` w XVI oznacza w kontekście starszego żołnierza o ograniczonych obowiązkach; proponowane „żołnierz na emeryturze” jest sugestią redakcyjną do rozpatrzenia, nie zatwierdzonym nowym odpowiednikiem. Nie utożsamiać z innym użyciem `pensioner` wobec studenta w IX. [XVI-01](review/2026-11-15/rozdzial-16.md).

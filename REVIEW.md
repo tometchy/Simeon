@@ -1,5 +1,17 @@
 # Przegląd tłumaczenia
 
+## Nowe lokalne review, 2026-11-15–17
+
+Ukończono ponowne porównanie całej książki ze skanem (2026-11-17), z ograniczeniami zasłoniętych fragmentów opisanymi w raportach. Wynik: 21 uwag, 10 P2 i 11 P3. Raporty: [indeks](review/2026-11-15/README.md). Nie wdrażamy proponowanych korekt. Nie publikować gałęzi i nie tworzyć PR-a. Poniższe starsze deklaracje kompletności dotyczą wcześniejszej kontroli. Nowe ustalenia obejmują m.in. neutral → „naturalna” (III), conscientious → „świadoma” (VI), pominięcie Close’a (XV). Szczegóły i stopień pewności w raportach.
+
+Korekty wcześniejszych ustaleń review (bez wdrożenia do przekładu):
+
+- PDF30/druk1: odczyt nazwy to **Dereham**, a nie Deneham. Potwierdzono ponownie w300dpi, [raport i wycinek](review/2026-11-15/rozdzial-01.md). Dawny wpis tabeli o zachowaniu „Deneham” jest błędny.
+- PDF302/druk271: źródło ma **„once the rood-loft”**. Wcześniejszy zapis o usunięciu dopisanego „niegdyś” był błędny, słowo ma podstawę w źródle. [XVII-01](review/2026-11-15/rozdzial-17.md).
+- Rozbieżność źródła IX-Z1: lokaty Grantów podane w VIII (PDF142/druk113, second/third) i IX (PDF160/druk131, third/fourth) różnią się już w oryginale. Obie zachowano wiernie. Nie poprawiać przekładu na podstawie samego porównania tych miejsc; [szczegóły](review/2026-11-15/rozdzial-09.md).
+- Zgłoszenie XV-03 o rzekomym braku znacznika rozmówcy **wycofano** po porównaniu pliku i bazowego commita. Znacznik jest obecny. XVI-01 obniżono do P3 (niejasny archaizm, bez dowiedzionego błędu sensu). [Niezależna kontrola uwag](review/2026-11-15/weryfikacja-uwag-prowadzacego.md).
+
+
 Status projektu: przedmowa, nota i wszystkie rozdziały I–XVII przetłumaczone oraz niezależnie porównane ze źródłem. Eksporty i ich kontrole opisuje POSTEP.md.
 
 Tutaj zapisujemy problemy w źródle, pytania do tłumaczenia i wyniki późniejszego review. Uzgodnione odpowiedniki trafiają do `TERMINOLOGIA.md`, a postęp do `PLAN-TLUMACZENIA.md`.

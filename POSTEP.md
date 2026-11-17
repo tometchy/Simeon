@@ -1,5 +1,17 @@
 # Stan pracy i punkt wznowienia
 
+## Zadanie 2026-11-15–17 — lokalne review całego przekładu
+
+**Review ukończone 2026-11-17.** Przedmowa, nota i I–XVII porównane ze skanem, z jawnymi ograniczeniami fizycznie zasłoniętych fragmentów. Raport: [review/2026-11-15/README.md](review/2026-11-15/README.md).
+
+- Polecenie użytkownika nadal obowiązuje: lokalna gałąź, **bez pushowania i bez PR-a**. Zastępuje starsze kroki publikacji poniżej.
+- Baza: `94ebe926811ef1322dd4dcfddb3c954fbf20e177`. Gałąź: `codex/review-calosc-2026-11-15`.
+- Wynik: 21 uwag (10 P2, 11 P3), rozbieżność oryginału IX-Z1 i sprostowania starszych ustaleń. XV-03 wycofana, XVI-01 to P3. Szczegółowe raporty są rozstrzygające.
+- Przekład w `chapters/`, skan, `build/` i `docs/` niezmienione. Propozycje nie zostały wdrożone. Nie generowano eksportów ani nie powtarzano przeglądu składu.
+- Kontrole: 125 przypisów i125 odsyłaczy bez braków/duplikatów, pandoc parsuje125 przypisów i18 nagłówków bez ostrzeżeń. Wszystkie zakresy zakończone; końcowy fragment porównany: „JESUS CHRIST AND HIM CRUCIFIED. 1 Cor. ii. 2.” (PDF307/druk276).
+- Praca przerwana limitami i wznawiana16 oraz17 listopada. Zapis etapów i szczegółowe punkty wznowienia w `postep/review-2026-11-15-*.md`; wcześniejsze częściowe statusy w tych plikach są historią.
+- Stan zapisu: komplet raportów i dokumentacji na dysku, kontrole linków, zakresów i `git diff --check` zakończone. Lokalny commit rozpoznawać po tytule „Zapisz pełne lokalne review polskiego przekładu”. Przy wznowieniu sprawdzić `git status --short` i `git log -1`; nie powtarzać całego review. Nie publikować.
+
 ## Aktywne zadanie od 2026-10-28
 
 Użytkownik zlecił tłumaczenie całej pozostałej książki w sposób wierny oryginałowi i piękny po polsku, z kontrolą skanu oraz ciągłym zapisem umożliwiającym wznowienie po wyczerpaniu limitu. „Kontynuuj” oznacza dalszą pracę nad tym zadaniem. Poprzednie ograniczenie do rozdziału I poniżej jest wyłącznie zapisem historycznym.
