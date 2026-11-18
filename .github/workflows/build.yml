@@ -1,37 +1,134 @@
-name: Build book
+name: Build and publish book
 
 on:
   push:
+    branches: [master]
   pull_request:
+    branches: [master]
   workflow_dispatch:
 
-permissions:
-  contents: read
+# Finish an active deployment; a queued run checks out the latest master.
+concurrency:
+  group: simeon-book-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
+    name: Generate PDF, EPUB, DOCX and HTML
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - name: Install Pandoc and LaTeX
+      - name: Check out sources
+        uses: actions/checkout@v4
+
+      # Match the dependencies used by the repository's Dockerfile.
+      - name: Install Pandoc and XeLaTeX
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y \
-            make pandoc fonts-dejavu-core lmodern texlive-fonts-recommended \
-            texlive-lang-polish texlive-plain-generic texlive-xetex
-      - name: Test comparison viewer
-        run: make test
-      - name: Build all formats
-        run: make book
-      - name: Verify generated files
-        run: |
-          test -s build/pdf/Charles-Simeon-H-C-G-Moule.pdf
-          test -s build/epub/Charles-Simeon-H-C-G-Moule.epub
-          test -s build/docx/Charles-Simeon-H-C-G-Moule.docx
-          test -s docs/index.html
-      - uses: actions/upload-artifact@v4
+            fonts-dejavu-core \
+            lmodern \
+            make \
+            pandoc \
+            texlive-fonts-recommended \
+            texlive-lang-polish \
+            texlive-plain-generic \
+            texlive-xetex
+
+      - name: Set up Node.js for compare tests
+        uses: actions/setup-node@v4
         with:
-          name: charles-simeon
+          node-version: '22'
+          cache: npm
+
+      - name: Install compare test dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Test comparison viewer and IndexedDB persistence
+        run: make test
+
+      - name: Rebuild every format from Markdown
+        # Also propagate failures from awk/filters inside Makefile pipelines.
+        run: make -B all
+
+      - name: Verify generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+          filename="Charles-Simeon-H-C-G-Moule"
+          for output in \
+            "build/pdf/${filename}.pdf" \
+            "build/epub/${filename}.epub" \
+            "build/docx/${filename}.docx" \
+            "docs/index.html"; do
+            test -s "$output" || { echo "::error::Missing or empty: $output"; exit 1; }
+            ls -lh "$output"
+          done
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+
+          filename = 'Charles-Simeon-H-C-G-Moule'
+          assert Path(f'build/pdf/{filename}.pdf').read_bytes().startswith(b'%PDF-')
+          for extension, member in [('epub', 'META-INF/container.xml'), ('docx', 'word/document.xml')]:
+              with ZipFile(f'build/{extension}/{filename}.{extension}') as archive:
+                  assert archive.testzip() is None, f'Corrupt {extension} archive'
+                  assert member in archive.namelist(), f'Invalid {extension} archive'
+          assert '</html>' in Path('docs/index.html').read_text()
+          PY
+
+      # GitHub Pages is the durable publication target, including downloadable
+      # PDF/EPUB/DOCX files. No push to protected master is required.
+      - name: Stage all book formats for GitHub Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          filename="Charles-Simeon-H-C-G-Moule"
+          for extension in pdf epub docx; do
+            install -Dm644 "build/${extension}/${filename}.${extension}" \
+              "docs/build/${extension}/${filename}.${extension}"
+          done
+          test -s docs/build/pdf/"${filename}".pdf
+          test -s docs/build/epub/"${filename}".epub
+          test -s docs/build/docx/"${filename}".docx
+          test -s docs/compare.html
+          test -s docs/highlight-store.mjs
+          grep -Fq 'polish: "./build/pdf/Charles-Simeon-H-C-G-Moule.pdf"' docs/compare.html
+          grep -Fq 'charlessimeon00moulgoog.pdf' docs/compare.html
+
+      # Short-lived downloadable bundle in each successful workflow run.
+      - name: Upload book files
+        uses: actions/upload-artifact@v4
+        with:
+          name: simeon-book-${{ github.sha }}
           path: |
-            build/
+            build/pdf/*.pdf
+            build/epub/*.epub
+            build/docx/*.docx
             docs/
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Package website for GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+
+  pages:
+    name: Publish GitHub Pages
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

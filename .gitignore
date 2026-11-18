@@ -29,4 +29,7 @@ node_modules/
 *.toc
 *.synctex.gz
 
-# Eksporty w build/ i docs/ są celowo wersjonowane.
+# Eksporty są generowane przez GitHub Actions i publikowane w Pages.
+/build/
+/docs/build/
+/docs/index.html
