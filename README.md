@@ -1,5 +1,7 @@
 # Charles Simeon — przekład polski
 
+## Uwaga: Przekład na chwilę obecną wyłącznie zrobiony przez AI
+
 Repozytorium do tłumaczenia książki **Charles Simeon** autorstwa **H. C. G. Moule’a** (Handley Carr Glyn Moule). Tekst jest opracowywany po polsku w Markdownie Pandoca, po jednym pliku na część książki.
 
 **Status: cały przekład i kontrola eksportów ukończone.** Przedmowa, nota i rozdziały I–XVII przeszły niezależne porównanie ze skanem. PDF ma 176 stron, wszystkie objęto kontrolą wizualną, a EPUB, HTML i DOCX sprawdzono technicznie. Repozytorium GitHub: [tometchy/Simeon](https://github.com/tometchy/Simeon). Aktualny stan opisuje [POSTEP.md](POSTEP.md), a zakres książki — [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md).
