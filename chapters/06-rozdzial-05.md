@@ -36,7 +36,7 @@ A John Venn, gdy w 1779 roku zamierzał rozpocząć studia w Cambridge, daremnie
 
 W związku z tym warto przytoczyć niepublikowany list Henry’ego Martyna. Napisał go (do swego przyjaciela, „R. Boys, Esq., Bene’t Coll., Cambridge”) trzy lata po świetnych sukcesach w Cambridge, a rok przed odpłynięciem do Indii:
 
-> *Truro, 8 sierpnia* 1804.
+> *Truro,* 8 *sierpnia* 1804.
 >
 > Drogi Boysie,
 >

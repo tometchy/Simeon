@@ -12,7 +12,7 @@ Kilka cennych, niepublikowanych wspomnień, spisanych przez przyjaciół pana Si
 
 Mieszkając w Cambridge, zebrałem przez lata wiele osobistych wspomnień od tych spośród moich przyjaciół i sąsiadów, którzy pamiętają lub pamiętali pana Simeona i jego czasy. Niektóre z nich weszły do tej opowieści.
 
-Wiele wdzięczności winien jestem Provostowi i członkom King’s College noszącym tytuł fellow za życzliwe zezwolenie na wykonanie fotografii należącego do nich portretu. Niegdyś był on własnością ks. T. T. Thomasona, a przed kilkoma laty podarował go kolegium jego wnuk, major Stephen. Na podstawie tej fotografii wykonano ilustrację otwierającą niniejszy tom. Przedstawia ona pana Simeona około roku 1808.
+Wielką wdzięczność winien jestem Provostowi i członkom King’s College noszącym tytuł fellow za życzliwe zezwolenie na wykonanie fotografii należącego do nich portretu. Niegdyś był on własnością ks. T. T. Thomasona, a przed kilkoma laty podarował go kolegium jego wnuk, major Stephen. Na podstawie tej fotografii wykonano ilustrację otwierającą niniejszy tom. Przedstawia ona pana Simeona około roku 1808.
 
 Odwiedzający publiczną Bibliotekę Uniwersytecką znajdą tam inny jego wizerunek: marmurowe popiersie stojące w Sali Wschodniej. Powstało ono po śmierci pana Simeona, lecz ludzie, którzy dobrze znali go na starość, zapewniali mnie, że żaden portret nie mógłby być wierniejszy.
 

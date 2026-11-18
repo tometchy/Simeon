@@ -1,5 +1,13 @@
 # Stan pracy i punkt wznowienia
 
+## Zadanie 2026-11-17–18 — wdrożenie uwag z gałęzi
+
+Na polecenie użytkownika „Na tym branchu są dodane uwagi, zrób poprawki” rozpoczęto wdrażanie 23 uwag z `review/2026-11-15/`. Baza zmian: `509d69d`, bieżąca gałąź `codex/review-calosc-2026-11-15`. Poprzedni etap obejmował wyłącznie lokalne review; obecny obejmuje poprawki książki i eksportów oraz PR zgodnie z bieżącym AGENTS.md.
+
+Praca równoległa: `postep/poprawki-2026-11-17-01-05.md`, `postep/poprawki-2026-11-17-06-10.md`, `postep/poprawki-2026-11-17-11-14.md`; prowadzący: XV–XVII, T-02 i scalenie dokumentacji. Każdy zapisuje tylko własne rozdziały. Uwagi wycofane/odrzucone i rozbieżności samego źródła nie podlegają korekcie.
+
+Stan: wszystkie 23 uwagi wdrożone i sprawdzone ze skanem; szczegóły zakresów i końcowych fragmentów w czterech raportach `postep/poprawki-2026-11-17-*.md`. Eksporty wygenerowane 17 listopada, `make pdf`, kontrola niepustego pliku i `make book` przeszły. Wznowiono 18 listopada po przerwie limitowej; potwierdzono aktualność eksportów. Przegląd wszystkich 23 zmian zakończony bez nowych uwag; zakres niezależności w `postep/poprawki-2026-11-17-kontrola.md`. Porównanie PDF: 22 zmienione strony, 154 identyczne tekstowo i geometrycznie, razem 176; kontrola marginesów bez błędów. Przegląd wizualny wszystkich 22 stron zakończony bez usterek (`postep/poprawki-2026-11-18-pdf-a.md` i `-b.md`). Kontrole struktury: 125 niezmienionych identyfikatorów przypisów, 125 przypisów i 18 nagłówków w Pandocu bez ostrzeżeń, 125 przypisów HTML/DOCX, poprawne archiwa i XML EPUB/DOCX. Źródłowy PDF niezmieniony. Końcowy SHA256 PDF: `9441c9c642652ef5700ea92084b054dc8f1fe5139cccdf79c0d5f875e37db18d`. Commit/PR jeszcze niewykonane. Kontynuacja: commit „Wprowadź 23 poprawki po review i odśwież eksporty”, push bieżącej gałęzi i zweryfikowany PR do `tometchy/Simeon:master`. [Raport wdrożenia](review/2026-11-15/wdrozenie-2026-11-17.md).
+
 ## Zadanie 2026-11-17 — weryfikacja review innego AI
 
 Weryfikacja czterech propozycji i narzędzi z `Simeon_review_2026-11-16/` zakończona, wyniki scalone z raportem. [Pełna ocena](review/2026-11-15/weryfikacja-review-2026-11-16.md): jedna zasadna korekta językowa (I-02), jedna opcjonalna stylistyczna (PRZ-01), dwie bez wykazanego błędu wymagającego korekty. Raport liczy teraz **23 uwagi: 10 P2 i 13 P3**. Wszystkie cztery miejsca sprawdzono z obrazami źródła; próby narzędzi wykonano na izolowanych kopiach.
@@ -10,7 +18,7 @@ Punkt wznowienia: [postep/weryfikacja-review-2026-11-16.md](postep/weryfikacja-r
 
 **Review ukończone 2026-11-17.** Przedmowa, nota i I–XVII porównane ze skanem, z jawnymi ograniczeniami fizycznie zasłoniętych fragmentów. Raport: [review/2026-11-15/README.md](review/2026-11-15/README.md).
 
-- Polecenie użytkownika nadal obowiązuje: lokalna gałąź, **bez pushowania i bez PR-a**. Zastępuje starsze kroki publikacji poniżej.
+- Na etapie review obowiązywało polecenie pracy lokalnej, **bez pushowania i bez PR-a**. Etap ten jest zakończony; nowe zlecenie wdrożenia opisano na początku pliku.
 - Baza: `94ebe926811ef1322dd4dcfddb3c954fbf20e177`. Gałąź: `codex/review-calosc-2026-11-15`.
 - Wynik pierwotnego review, przed późniejszym uzupełnieniem opisanym powyżej: 21 uwag (10 P2, 11 P3), rozbieżność oryginału IX-Z1 i sprostowania starszych ustaleń. XV-03 wycofana, XVI-01 to P3. Szczegółowe raporty są rozstrzygające.
 - Przekład w `chapters/`, skan, `build/` i `docs/` niezmienione. Propozycje nie zostały wdrożone. Nie generowano eksportów ani nie powtarzano przeglądu składu.

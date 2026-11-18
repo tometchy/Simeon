@@ -34,7 +34,7 @@ Ustalenia dotyczące przekładu książki *Charles Simeon*. Glosariusz uzupełni
 | Dean; Dean of Divinity; Second Bursar; Vice-Provost | zachowane nazwy angielskie | Rozdział V; polskie odpowiedniki historyczne nie zostały uzgodnione. |
 | Senior Wrangler; President; Jacksonian Professor | zachowane nazwy angielskie | Rozdział V, Milner i Farish. |
 | Growing Influence | Rosnący wpływ | Tytuł VI. |
-| gallery (kościół) | empora | Ujednolicone III i VI; odróżniać od galerii w innych kontekstach. |
+| gallery (kościół) | empora | Ujednolicone III, IV i VI; odróżniać od galerii w innych kontekstach. |
 | gownsmen | ludzie Uniwersytetu | Odróżniać od townsmen (mieszkańców miasta), VI. |
 | rates (relief) | podatki na ubogich | VI, okólnik z1789. |
 | mandated (kaznodziejstwo) | *mandated* | Zachowano historyczny termin z objaśnieniem autora: nauczenie się kazania na pamięć i recytacja. |
@@ -98,8 +98,12 @@ Przy pierwszym wystąpieniu rozstrzygnij i zapisz sposób oddawania nazw kolegi�
 
 - Scrupulous conscience — sumienie skrupulanckie (XIV, przeciwstawione sumieniu czułemu); irregular w sporze kościelnym — odstępujący od przyjętych reguł, nie nieregularny w czasie.
 
-## Uwagi z lokalnego review 2026-11-15–17 — bez wdrażania zmian
+## Ustalenia po wdrożeniu review, 2026-11-17
 
-Nie przyjęto nowych odpowiedników. Wykryto odstępstwa od istniejących ustaleń: galerie/empory (IV-01), Canon/kanonik (T-01) oraz archidiakon/Archdeacon (T-02). Lokalizacje i proponowane ujednolicenia: [raport przekrojowy](review/2026-11-15/kontrole-przekrojowe.md). Nie zmienia to zasad zachowania nieuzgodnionych nazw urzędów.
+Ujednolicono galerie/empory (IV-01), Canon/kanonik (T-01) oraz archidiakon/Archdeacon (T-02) według istniejących ustaleń. Nie wprowadzono nowych odpowiedników historycznych urzędów.
 
-`pensioner soldier` w XVI oznacza w kontekście starszego żołnierza o ograniczonych obowiązkach; proponowane „żołnierz na emeryturze” jest sugestią redakcyjną do rozpatrzenia, nie zatwierdzonym nowym odpowiednikiem. Nie utożsamiać z innym użyciem `pensioner` wobec studenta w IX. [XVI-01](review/2026-11-15/rozdzial-16.md).
+- `pensioner soldier` — żołnierz na emeryturze (XVI); przyjęta sugestia poprawy zrozumiałości „żołnierza na pensji”. Nie utożsamiać ze studenckim `pensioner` w IX.
+- `scrupulosity` — skrupulanctwo (XII), w kontekście nadmiernych skrupułów sumienia, spójnie z `scrupulous conscience` w XIV.
+- `Abbey of Dereham` — opactwo Dereham (I); poprawiony odczyt nazwy z PDF30/druk1, bez modernizacji historycznej.
+
+Szczegóły: [raport wdrożenia](review/2026-11-15/wdrozenie-2026-11-17.md).

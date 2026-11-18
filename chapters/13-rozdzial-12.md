@@ -42,7 +42,7 @@ Pewna pani zwróciła się do niego z pytaniem sumienia dotyczącym obowiązku w
 
 „Po drugie, Musimy służyć człowiekowi wiernie, lecz w podporządkowaniu Bogu i tylko o tyle, o ile da się to pogodzić z naszym obowiązkiem wobec Boga.
 
-„Przede wszystkim musimy jednak uważać, by nie czynić grzechem tego, co nim nie jest, ani obowiązkiem tego, co nim nie jest. Pierwsze jest niepotrzebną skrupulatnością, drugie — zabobonem.
+„Przede wszystkim musimy jednak uważać, by nie czynić grzechem tego, co nim nie jest, ani obowiązkiem tego, co nim nie jest. Pierwsze jest niepotrzebnym skrupulanctwem, drugie — zabobonem.
 
 „Po wtóre, musimy uważać, by nie czynić *naszym* obowiązkiem tego, co jest wprawdzie obowiązkiem innych, lecz nie naszym. Na przykład w państwie wiele rzeczy może być nie w porządku, a jednak ich naprawienie nie jest *naszym* obowiązkiem, lecz wyłącznie obowiązkiem Parlamentu. Podobnie może być w domu męża. Żona może doradzać, lecz nie rozkazywać, chyba że w sprawach należących do *niej samej*. Może Pani ubolewać nad złem, lecz nie przeciwstawiać mu się z pozycji władzy tam, gdzie Bóg nie powierzył Pani zwierzchniego zarządu.
 
@@ -54,7 +54,7 @@ Pisze do „kogoś, kogo nakłaniano do bardzo ostrego głoszenia”:
 
 „7 *grudnia* 1817.
 
-„Jaki jest twój cel? Czy chcesz *pozyskać* dusze? Jeśli tak, jak zamierzasz się do tego zabrać? Budząc wszelkiego rodzaju uprzedzenia i wypędzając ludzi z kościoła? Jak postępował nasz Pan? Przemawiał w przypowieściach «*tak, jak ludzie byli w stanie słuchać*». Jak postępował św. Paweł? Karmił niemowlęta *mlekiem*, a nie stałym pokarmem. Co do świata religijnego, ludzie ci są przeważnie równie samolubni jak nieświadomi i bezbożni. Nie wystarcza im, że zabiegasz o dobro innych, jeśli przy tym, *aby im się przypodobać*, nie poruszasz także spraw, które całkiem udaremnią twój cel. Byle tylko ich zadowolono, nie troszczą się o to, kogo się gorszy i odpędza.
+„Jaki jest twój cel? Czy chcesz *pozyskać* dusze? Jeśli tak, jak zamierzasz się do tego zabrać? Budząc wszelkiego rodzaju uprzedzenia i wypędzając ludzi z kościoła? Jak postępował nasz Pan? Przemawiał w przypowieściach «*tak, jak ludzie byli w stanie słuchać*». Jak postępował św. Paweł? Karmił niemowlęta *mlekiem*, a nie stałym pokarmem. Co do świata religijnego, ludzie ci są przeważnie równie samolubni jak ludzie nieświadomi i bezbożni. Nie wystarcza im, że zabiegasz o dobro innych, jeśli przy tym, *aby im się przypodobać*, nie poruszasz także spraw, które całkiem udaremnią twój cel. Byle tylko ich zadowolono, nie troszczą się o to, kogo się gorszy i odpędza.
 
 „Nie wolno ci być w niewoli świata religijnego, podobnie jak w niewoli bezbożnych. To prawda, że nie możesz przemilczać podstawowych nauk Ewangelii, lecz są różne sposoby ich przedstawiania. Powinieneś wybrać taki, który wyraża życzliwość i miłość, a nie taki, który świadczy o nieczułej surowości. Mów tylko z miłości do człowieka, a nie z obawy przed człowiekiem, a Bóg zarówno cię przyjmie, jak i pobłogosławi twej pracy”.
 

@@ -1,8 +1,14 @@
 # Przegląd tłumaczenia
 
-## Nowe lokalne review, 2026-11-15–17
+## Wdrożenie uwag, 2026-11-17
 
-Ukończono ponowne porównanie całej książki ze skanem (2026-11-17), z ograniczeniami zasłoniętych fragmentów opisanymi w raportach. Po uzupełnieniu o zweryfikowane uwagi innego AI wynik wynosi **23 uwagi, 10 P2 i 13 P3** (wcześniej 21, 10 P2 i 11 P3). Raporty: [indeks](review/2026-11-15/README.md). Nie wdrażamy proponowanych korekt. Nie publikować gałęzi i nie tworzyć PR-a. Poniższe starsze deklaracje kompletności dotyczą wcześniejszej kontroli. Nowe ustalenia obejmują m.in. neutral → „naturalna” (III), conscientious → „świadoma” (VI), pominięcie Close’a (XV). Szczegóły i stopień pewności w raportach.
+Na nowe polecenie użytkownika wdrożono wszystkie 23 aktywne uwagi (10 P2, 13 P3), w tym przyjęto sugestie stylistyczne PRZ-01 i XVI-01. Każde zmieniane miejsce porównano z obrazem źródła. [Raport wdrożenia](review/2026-11-15/wdrozenie-2026-11-17.md) rozstrzyga bieżący status; starsze „nie wdrożono” w raportach opisują stan w chwili review. Wycofanej XV-03 i dwóch odrzuconych propozycji zewnętrznych nie zastosowano, rozbieżności samego oryginału pozostawiono. Korekta lokalizacji T-02: przypis o Archdeaconie Pratcie znajduje się na PDF148/druk119, nie PDF147/druk118.
+
+Eksporty i skład są odrębnymi etapami opisanymi w POSTEP.md. Ograniczenie do lokalnego review dotyczyło zakończonego poprzedniego etapu; aktualne zlecenie obejmuje poprawki i zakończenie według bieżącego AGENTS.md.
+
+## Historyczne lokalne review, 2026-11-15–17
+
+Ukończono ponowne porównanie całej książki ze skanem (2026-11-17), z ograniczeniami zasłoniętych fragmentów opisanymi w raportach. Po uzupełnieniu o zweryfikowane uwagi innego AI wynik wynosi **23 uwagi, 10 P2 i 13 P3** (wcześniej 21, 10 P2 i 11 P3). Raporty: [indeks](review/2026-11-15/README.md). Na etapie review nie wdrażano proponowanych korekt ani nie publikowano gałęzi i PR-a. Poniższe starsze deklaracje kompletności dotyczą wcześniejszej kontroli. Nowe ustalenia obejmują m.in. neutral → „naturalna” (III), conscientious → „świadoma” (VI), pominięcie Close’a (XV). Szczegóły i stopień pewności w raportach.
 
 Weryfikacja wszystkich czterech propozycji z `Simeon_review_2026-11-16/` zakończona 2026-11-17: dodano I-02 (zasadna korekta osoby gramatycznej we wprowadzeniu do cytatu, P3) i PRZ-01 (opcjonalna poprawa naturalności wyrażenia wdzięczności, P3). Druga propozycja przedmowy nie wykazuje błędu składni, a wielka litera w XIII pochodzi ze źródła. Nie przyjęto tych dwóch jako koniecznych poprawek. Potwierdzono deklarowane liczby plików i przypisów. Skrypt może zakończyć się błędem po zapisaniu zmian w książce; dołączony test jest kontrolą struktury, nie wierności ani kompletności przekładu. [Pełne rozstrzygnięcia i ograniczenia narzędzi](review/2026-11-15/weryfikacja-review-2026-11-16.md). Pakiet pozostał bez zmian i nie został zastosowany.
 
@@ -26,7 +32,7 @@ Historyczna aktualizacja 2026-10-28: zapisano przedmowę i notę oraz fragmenty 
 | Rozdział II, druk16 | Wspomnienie mówi o trzecim dniu po przyjeździe, list podaje przyjazd29 stycznia i powiadomienie2 lutego. | Zachowano oba sformułowania i daty. | Rozbieżność źródła. |
 | Rozdział III, druk32–33 | Autor mówi o dwóch ostatnich latach Sibbesa przed śmiercią w1635, po czym podaje objęcie posługi w1634. | Zachowano oba sformułowania. | Rozbieżność źródła. |
 | Rozdział IV, druk47–48 | Simeon według autora nie miał jeszcze23 lat, choć mowa o kwietniu1783, a datą narodzin w rozdzialeI jest24 września1759. | Zachowano wiek podany przez autora, sprawdzony w powiększeniu skanu. | Rozbieżność źródła. |
-| Rozdział I, druk 1 / PDF 30 | W źródle nazwa „Abbey of Deneham”. | Zachowano „opactwo Deneham”, bez samowolnej korekty nazwy. | Zachowano zapis źródła. |
+| Rozdział I, druk 1 / PDF 30 | W źródle nazwa „Abbey of Dereham”; dawny odczyt Deneham był błędny. | Przywrócono „opactwo Dereham” zgodnie ze skanem. | I-01 wdrożona 2026-11-17. |
 | Rozdział I, druk 1 / PDF 30 | Minister, Perpetual Curate i Vicarage oznaczają różne pojęcia związane z urzędem i beneficjum. | Minister oddano jako „duszpasterz”, Perpetual Curate i Vicarage pozostawiono w oryginale, bez narzucania polskiego odpowiednika historycznych instytucji. | Do ewentualnego uzgodnienia polskie odpowiedniki. |
 | Rozdział I, druk 4 / PDF 33 | Przypis autora odsyła do s. 204. | Zachowano numer drukowanej strony oryginału, nie jest to numer strony polskiego eksportu. | Zachowano odsyłacz źródłowy. |
 | Rozdział I, druk 5 / PDF 34 | Cytat grecki i następujący po nim angielski przekład, a także wcześniejsza aluzja biblijna o poście. | Zachowano grekę kursywą; angielski tekst przełożono samodzielnie, bez zastępowania gotowym polskim przekładem Biblii. Niełamliwe spacje chronią krótki grecki cytat przed podziałem. | Znaki i kursywa sprawdzone w końcowym PDF-ie. |
@@ -96,7 +102,7 @@ Wszystkie21 stron PDF119–139/druk90–110 i przypisy porównano niezależnie z
 - XIII: ukończono pełne porównanie PDF227–238. Poprawiono m.in. ciężarne owce w cytacie Scotta, sprawnych fizycznie ludzi w liście Marsha, osoby życzliwe u Veitha i „naszą nadzieję” u Gurneya. Nieobjaśnione „a full and firm fish” zachowano jako „dorodnej i jędrnej ryby”, bez dodanej interpretacji.
 - XIII, druk206: autor pisze przy Samuelu Wilberforce „After the death of his brother Henry”. Usunięto dopisane w przekładzie „syna jego brata”, przywracając dosłowną relację podaną przez autora. Wątpliwość historyczna pozostaje poza przekładem.
 - XIV: pełna niezależna kontrola PDF239–262 zakończona. Przywrócono Claytona i relację braterską, przyjęcie dzięki Chrystusowi, nazwę „dzień otwarty”, znaczenie odstępstwa od reguł kościelnych (irregular) i właściwego adresata drugiego listu — chlebodawcę Johna. Przypisy kompletne.
-- XVII: pełna niezależna kontrola PDF294–307 zakończona. Usunięto dodany wielokropek w cytacie Bunyana oraz „niegdyś” w opisie lektorium. Końcowa inskrypcja i cztery przypisy kompletne. Kolofon drukarni oryginału zapisano w komentarzu HTML, nie jako dane polskiego wydania.
+- XVII: pełna niezależna kontrola PDF294–307 zakończona. Usunięto dodany wielokropek w cytacie Bunyana. Ówczesne usunięcie „niegdyś” w opisie lektorium było błędne; słowo przywrócono 2026-11-17 (XVII-01). Końcowa inskrypcja i cztery przypisy kompletne. Kolofon drukarni oryginału zapisano w komentarzu HTML, nie jako dane polskiego wydania.
 
 ## Zamknięcie składu i eksportów, 2026-11-13
 

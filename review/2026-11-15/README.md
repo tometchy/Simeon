@@ -1,5 +1,7 @@
 # Review całego przekładu — 15–17 listopada 2026
 
+**Aktualizacja 2026-11-17:** na nowe polecenie użytkownika wdrożono wszystkie 23 aktywne uwagi; [raport wdrożenia i kontroli](wdrozenie-2026-11-17.md). Poniższy raport dokumentuje wcześniejszy etap review, w tym ówczesne ograniczenie publikacji.
+
 **Ukończono review przedmowy, noty i wszystkich 17 rozdziałów oraz weryfikację czterech propozycji z pakietu innego AI.** Zapisano **23 uwagi: 10 P2 i 13 P3**, jedną nową rozbieżność samego oryginału i dwa sprostowania wcześniejszych ustaleń review. Jedno zgłoszenie z pierwotnego review wycofano po weryfikacji i nie jest wliczane. Liczba uwag obejmuje również opcjonalne sugestie stylistyczne.
 
 Baza: `94ebe926811ef1322dd4dcfddb3c954fbf20e177`. Lokalna gałąź: `codex/review-calosc-2026-11-15`. Przekład, źródłowy PDF i eksporty pozostały bez zmian. **Nie pushować gałęzi i nie tworzyć PR-a** — takie jest polecenie użytkownika dla tego zadania. Raport zawiera propozycje do rozpatrzenia, nie wdrożone poprawki.

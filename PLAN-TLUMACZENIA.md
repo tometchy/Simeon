@@ -25,8 +25,12 @@ Prefiks nazwy pliku oznacza kolejność eksportu. Numer rozdziału w książce j
 | XVI | The Last Months | 252 | `17-rozdzial-16.md` | przekład, niezależny przegląd i kontrola eksportów ukończone |
 | XVII | Death and Burial | 263 | `18-rozdzial-17.md` | przekład, niezależny przegląd i kontrola eksportów ukończone |
 
-## Najbliższy etap
+## Bieżący etap — wdrożenie uwag, 2026-11-17
 
-Cała przedmowa, nota i rozdziały I–XVII zostały przetłumaczone. Kontrola składu i eksportów poprzedniej wersji zakończyła się 2026-11-13. Ponowne review całego przekładu wykonano w dniach 2026-11-15–17, wyłącznie lokalnie na gałęzi `codex/review-calosc-2026-11-15`, **bez pushowania i bez PR-a**. Raporty i sugestie nie są wdrażane do tekstu książki. Bieżący stan: `POSTEP.md`, indeks: [review/2026-11-15/README.md](review/2026-11-15/README.md). Wiersze statusu w tabeli opisują wcześniejsze zakończenie tłumaczenia i kontroli eksportów, nie brak uwag w nowym review.
+Wdrożono 23 aktywne uwagi z review, po sprawdzeniu zmienianych miejsc ze skanem. Szczegóły: [raport wdrożenia](review/2026-11-15/wdrozenie-2026-11-17.md). Eksporty i przegląd 22 zmienionych stron PDF-u zakończono 2026-11-18 bez usterek; szczegóły kontroli i osobny status publikacji w POSTEP.md. Nowe polecenie użytkownika rozpoczyna etap korekty po zakończonym lokalnym review.
+
+## Historia zakończonego review
+
+Cała przedmowa, nota i rozdziały I–XVII zostały przetłumaczone. Kontrola składu i eksportów poprzedniej wersji zakończyła się 2026-11-13. Ponowne review całego przekładu wykonano w dniach 2026-11-15–17, wyłącznie lokalnie na gałęzi `codex/review-calosc-2026-11-15`, **bez pushowania i bez PR-a**. Na etapie review raporty i sugestie nie były wdrażane do tekstu książki. Bieżący stan: `POSTEP.md`, indeks: [review/2026-11-15/README.md](review/2026-11-15/README.md). Wiersze statusu w tabeli opisują wcześniejsze zakończenie tłumaczenia i kontroli eksportów, nie brak uwag w nowym review.
 
 2026-11-17 zakończono również [weryfikację pakietu review innego AI](review/2026-11-15/weryfikacja-review-2026-11-16.md). Z czterech propozycji dwie dodano do raportu jako P3 (jedna opcjonalna stylistyczna), a dwie nie wykazały błędu wymagającego korekty. Raport obejmuje obecnie 23 uwagi. Weryfikacja nie oznacza wdrożenia pakietu ani zmiany książki.

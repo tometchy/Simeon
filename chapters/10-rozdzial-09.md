@@ -100,7 +100,7 @@ Mógłbym z ochoczą czcią szerzej omówić charakter i dzieło wspomnianego ju
 
 [^martyn-kirke-white]: Wśród papierów Simeona znajduje się łaciński list Kirke White’a, napisany w 1805 roku do profesora greki (Porsona), z prośbą o pozwolenie *pro formâ* na ubieganie się o stypendium uniwersyteckie Cravena. Zmarły już prof. Sedgwick (B.A. 1808) opowiadał mi wiele lat temu o swoich osobistych wspomnieniach Kirke White’a: „wysoki, o zamyślonej twarzy i wyglądzie geniusza”.
 
-[^martyn-carus-smierc]: Pozostawiam te słowa bez zmian. Napisano je na kilka miesięcy przed śmiercią Canona Carusa.
+[^martyn-carus-smierc]: Pozostawiam te słowa bez zmian. Napisano je na kilka miesięcy przed śmiercią kanonika Carusa.
 
 Ten długi rozdział musi się jednak skończyć, a zakończy go ustęp, w którym grupa wcześniejszych przyjaciół Simeona pojawia się razem, w obrazie spotkań duchownych w Shelford i Aspeden.
 

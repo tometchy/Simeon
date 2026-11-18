@@ -55,7 +55,7 @@ Nie uruchamiano `make pdf` ani `make book`: review nie zmienia treści książki
 
 ### T-02 — P3 — Archdeacon/archidiakon
 
-- Miejsce: `chapters/09-rozdzial-08.md:53`, przypis `indie-pratt-zalozenie-cms`; PDF147 / druk118, „Archdeacon Pratt”.
+- Miejsce: `chapters/09-rozdzial-08.md:53`, przypis `indie-pratt-zalozenie-cms`; PDF148 / druk119, „Archdeacon Pratt” (lokalizacja sprostowana przy wdrożeniu).
 - PL: „archidiakona Pratta”, podczas gdy w XIII (linia97) i XVI (linia39) oraz w glosariuszu pozostaje angielskie „Archdeacon”.
 - Uwaga: oba warianty trzeba uzgodnić. Nie przesądza to o błędzie merytorycznym polskiego tytułu. Dla zgodności z bieżącym glosariuszem proponuję „Archdeacona Pratta”. Nie narzucam nowego polskiego odpowiednika. Nie wdrożono.
 
