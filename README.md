@@ -4,7 +4,7 @@ Repozytorium do tłumaczenia książki **Charles Simeon** autorstwa **H. C. G. M
 
 **Status: cały przekład i kontrola eksportów ukończone.** Przedmowa, nota i rozdziały I–XVII przeszły niezależne porównanie ze skanem. PDF ma 176 stron, wszystkie objęto kontrolą wizualną, a EPUB, HTML i DOCX sprawdzono technicznie. Repozytorium GitHub: [tometchy/Simeon](https://github.com/tometchy/Simeon). Aktualny stan opisuje [POSTEP.md](POSTEP.md), a zakres książki — [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md).
 
-Gotowe pliki: [PDF](build/pdf/Charles-Simeon-H-C-G-Moule.pdf), [EPUB](build/epub/Charles-Simeon-H-C-G-Moule.epub), [DOCX](build/docx/Charles-Simeon-H-C-G-Moule.docx), [HTML](docs/index.html).
+Aktualne wydania: [PDF](https://tometchy.github.io/Simeon/build/pdf/Charles-Simeon-H-C-G-Moule.pdf), [EPUB](https://tometchy.github.io/Simeon/build/epub/Charles-Simeon-H-C-G-Moule.epub), [DOCX](https://tometchy.github.io/Simeon/build/docx/Charles-Simeon-H-C-G-Moule.docx), [HTML](https://tometchy.github.io/Simeon/), [porównywarka PDF](https://tometchy.github.io/Simeon/compare.html).
 
 ## Oryginał
 
@@ -23,7 +23,7 @@ Większość skanu nie ma warstwy tekstowej. Przy tłumaczeniu korzystaj z obraz
 1. Najpierw przeczytaj [POSTEP.md](POSTEP.md) i sprawdź `git status --short`, aby wznowić przerwaną pracę bez pominięć ani powtórzeń. Pierwszy rozdział znajduje się w [chapters/02-rozdzial-01-rodzina-i-szkola.md](chapters/02-rozdzial-01-rodzina-i-szkola.md), a przedmowa wraz z notą w [chapters/01-przedmowa.md](chapters/01-przedmowa.md).
 2. Tłumacz kolejne akapity, zastępując komentarz o statusie, gdy część będzie gotowa. Zasady pracy opisuje [AGENTS.md](AGENTS.md), a ustalone nazwy i terminy zapisuj w [TERMINOLOGIA.md](TERMINOLOGIA.md).
 3. Dodawaj dalsze pliki według [PLAN-TLUMACZENIA.md](PLAN-TLUMACZENIA.md). Kolejność eksportu wynika z nazw plików, np. `03-rozdzial-02.md`, `04-rozdzial-03.md`.
-4. Po zmianach uruchom `make pdf`, a przed PR-em zaktualizuj wszystkie formaty przez `make book`. Zmienione eksporty dołącz do tego samego commita co Markdown.
+4. Zmiany tekstu i szablonów zgłaszaj przez PR do `master`. GitHub Actions sprawdzi porównywarkę oraz zbuduje wszystkie formaty; po merge opublikuje je przez GitHub Pages. Nie commituj wygenerowanych eksportów.
 
 Uwagi redakcyjne zapisuj w [REVIEW.md](REVIEW.md). Nie umieszczaj instrukcji roboczych w widocznym tekście książki. W razie potrzeby używaj komentarzy HTML `<!-- ... -->`, pomijanych w eksportach.
 
@@ -37,13 +37,13 @@ images/                           ilustracje i ewentualna przyszła okładka
 metadata.yml                      dane polskiego przekładu i wydania źródłowego
 templates/                        szablony PDF, EPUB, HTML i DOCX
 filters/                          filtry Pandoca do tabel i podziałów wierszy
-build/pdf/                        PDF polskiego przekładu
-build/epub/                       EPUB polskiego przekładu
-build/docx/                       DOCX polskiego przekładu
-docs/index.html                   HTML polskiego przekładu
+build/pdf/                        lokalny, generowany PDF (ignorowany przez Git)
+build/epub/                       lokalny, generowany EPUB (ignorowany przez Git)
+build/docx/                       lokalny, generowany DOCX (ignorowany przez Git)
+docs/index.html                   generowany HTML (ignorowany przez Git)
 docs/compare.html                 porównywarka angielskiego i polskiego PDF-u
 tests/                            testy porównywarki
-.github/workflows/build.yml       automatyczne testy i eksporty
+.github/workflows/build.yml       testy, budowanie i publikacja GitHub Pages
 charlessimeon00moulgoog.pdf        oryginalny skan
 ```
 
@@ -77,7 +77,7 @@ Eksport EPUB działa bez okładki. Aby dodać własną, zapisz ją jako `images/
 
 `make clean` usuwa eksporty z `build/` i `docs/index.html`. Nie usuwa skanu ani Markdownu.
 
-Opcjonalnie można zbudować wszystkie formaty w kontenerze poleceniem `./generate.sh` (wymaga Podmana). W środowisku Codex używaj bezpośrednio `make pdf` i `make book`.
+Opcjonalnie można zbudować wszystkie formaty lokalnie lub w kontenerze (`./generate.sh`, wymaga Podmana). Jest to niezależne od automatycznego buildu i publikacji po merge.
 
 ## Podgląd i porównywanie
 
@@ -92,40 +92,45 @@ python3 -m http.server 8000
 
 Porównywarka otwiera skan angielski oraz wygenerowany polski PDF. Zakreślenia i ustawienia tej książki są przechowywane oddzielnie. Opcjonalna synchronizacja z GitHub wymaga osobnego repozytorium danych i tokenu podanego w ustawieniach porównywarki. Domyślna proponowana nazwa to `simeon-compare-data`, samo przygotowanie projektu nie tworzy tego repozytorium.
 
-Po opublikowaniu katalogu `docs/` przez GitHub Pages porównywarka pobiera PDF-y z domyślnej gałęzi tego samego repozytorium. Lokalne zmiany oglądaj przez lokalny serwer.
+Po wdrożeniu przez GitHub Pages porównywarka pobiera oryginał z `master`, a polski PDF z aktualnego wydania na Pages. Lokalne zmiany oglądaj przez lokalny serwer.
 
-## Publikacja w GitHub Pages
+## Automatyczna publikacja przez GitHub Actions
 
-Repozytorium `tometchy/Simeon` jest przygotowane do publikacji katalogu `docs/`:
+Workflow [`.github/workflows/build.yml`](.github/workflows/build.yml)
+uruchamia testy (`npm ci`, `make test`) oraz buduje cztery formaty
+(`make -B all`) dla każdego PR do `master`. Po merge do `master`
+publikuje PDF, EPUB, DOCX i HTML w jednym wdrożeniu GitHub Pages.
+Wszystko działa na darmowym standardowym runnerze Ubuntu w publicznym repozytorium.
 
-1. Otwórz [Settings → Pages](https://github.com/tometchy/Simeon/settings/pages).
-2. W **Build and deployment → Source** wybierz **Deploy from a branch**.
-3. Wybierz gałąź **master**, katalog **/docs** i kliknij **Save**.
-4. Poczekaj na zakończenie wdrożenia **pages build and deployment** w zakładce **Actions**.
+Jednorazowa konfiguracja: [Settings → Pages](https://github.com/tometchy/Simeon/settings/pages)
+→ Build and deployment → Source: **GitHub Actions** (nie „Deploy from a branch”).
+Status buildów i publikacji jest dostępny w [Actions](https://github.com/tometchy/Simeon/actions).
+Nie jest potrzebny token PAT ani prawo bota do pushowania do chronionego `master`.
 
-Po pomyślnym wdrożeniu książka będzie dostępna pod adresem <https://tometchy.github.io/Simeon/>, a porównywarka pod <https://tometchy.github.io/Simeon/compare.html>.
+- [Książka HTML](https://tometchy.github.io/Simeon/)
+- [PDF](https://tometchy.github.io/Simeon/build/pdf/Charles-Simeon-H-C-G-Moule.pdf)
+- [EPUB](https://tometchy.github.io/Simeon/build/epub/Charles-Simeon-H-C-G-Moule.epub)
+- [DOCX](https://tometchy.github.io/Simeon/build/docx/Charles-Simeon-H-C-G-Moule.docx)
+- [Porównywarka PDF](https://tometchy.github.io/Simeon/compare.html)
 
-Porównywarka na tym adresie pobiera:
+Porównywarka pobiera oryginalny skan z
+[repozytorium](https://github.com/tometchy/Simeon/blob/master/charlessimeon00moulgoog.pdf),
+a wygenerowany polski PDF z tego samego wdrożenia GitHub Pages.
+Zakreślenia zapisuje w IndexedDB; zachowuje migrację dotychczasowych zakreśleń
+z lokalnej pamięci przeglądarki i opcjonalną synchronizację z osobnym
+repozytorium GitHub (`simeon-compare-data`).
 
-- angielski oryginał: <https://raw.githubusercontent.com/tometchy/Simeon/HEAD/charlessimeon00moulgoog.pdf> (321 stron),
-- polski przekład: <https://raw.githubusercontent.com/tometchy/Simeon/HEAD/build/pdf/Charles-Simeon-H-C-G-Moule.pdf> (176 stron).
+Pliki `build/`, `docs/build/` i generowany `docs/index.html` są ignorowane
+przez Git. Nadal można je wytwarzać lokalnie za pomocą `make all`,
+ale nie należy dołączać ich do PR; **aktualne wydania pobieraj z Pages**.
+Artefakty każdej kompilacji są też dostępne w Actions przez 7 dni.
 
-Nie trzeba kopiować PDF-ów do `docs/`. Repozytorium musi być publiczne, aby przeglądarka mogła pobrać te pliki bez logowania. Po zmianach przekładu uruchom `make book` i zatwierdź eksporty wraz z Markdownem na gałęzi `master` (np. przez scalenie PR-a). Aktualizacja `docs/` uruchomi ponowne wdrożenie Pages. Workflow `Build book` sprawdza i generuje pliki jako artefakt, ale sam ich nie publikuje ani nie zapisuje w repozytorium.
+## Kontrola zmian
 
-Instrukcja GitHub: [konfiguracja źródła publikacji Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-
-## Kontrola przed pull requestem
-
-```bash
-make pdf
-test -s build/pdf/Charles-Simeon-H-C-G-Moule.pdf
-make book
-make test
-git diff --check
-git status --short
-```
-
-Sprawdź wizualnie zmienione strony PDF-u. W commicie uwzględnij Markdown, metadane lub szablony oraz zmienione eksporty. Workflow GitHub Actions sprawdza testy, buduje wszystkie formaty i udostępnia je jako artefakt `charles-simeon`.
+Wprowadzaj poprawki do Markdownu, szablonów i kodu przez PR. Na własnym komputerze
+nie trzeba uruchamiać Pandoca ani XeLaTeX: kontrolę `make test`, `make -B all`
+i weryfikację struktur PDF/EPUB/DOCX/HTML wykonuje GitHub Actions.
+Warto zweryfikować wizualnie skład PDF po zmianach typograficznych.
 
 ## Zasady udostępniania
 

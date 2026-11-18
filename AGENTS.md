@@ -45,26 +45,30 @@ Wstępne strony skanu się powtarzają: przedmowa znajduje się na stronach PDF 
 
 ## Generowanie i weryfikacja
 
-Po każdej zmianie treści książki, przed utworzeniem pull requesta, obowiązkowo uruchom:
+Źródłem publikacji są pliki w `chapters/`, `metadata.yml` oraz szablony
+Pandoca. Nie zmieniaj oryginalnego skanu, licencji ani danych wydawcy bez
+wyraźnej instrukcji.
 
-```bash
-make pdf
-test -s build/pdf/Charles-Simeon-H-C-G-Moule.pdf
-```
+**Nie wymagaj uruchamiania `make pdf`, `make book`, Podmana ani Pandoca
+na laptopie autora ani w środowisku Codex przed otwarciem PR.**
+Zmiany źródłowe proponuj w normalnym PR do `master`.
 
-Jeśli generowanie się nie powiedzie, najpierw ustal i napraw przyczynę. Nie twórz PR-a z błędem generowania. Obejrzyj zmienione strony PDF-u.
+Workflow `.github/workflows/build.yml` automatycznie wykonuje `make test`,
+`make -B all` i walidację PDF, EPUB, DOCX oraz HTML dla PR. Po merge do
+`master` publikuje wszystkie formaty przez GitHub Pages.
 
-Przed PR-em wygeneruj pozostałe formaty i sprawdź stan repozytorium:
+Nie dodawaj wygenerowanych plików `build/`, `docs/build/` ani
+`docs/index.html` do commitów; są ignorowane przez Git.
+Nie stosuj bezpośredniego `git push` do chronionego `master`.
+Można dodatkowo uruchomić lokalnie `make test` i `make all`, gdy
+narzędzia są dostępne, ale nie jest to wymóg do utworzenia PR.
 
-```bash
-make book
-git diff --check
-git status --short
-```
-
-Zmienione pliki w `build/` i `docs/` dołącz do tego samego commita i PR-a co odpowiednie zmiany Markdownu. Po zmianach w porównywarce uruchom `make test`.
-
-W środowisku Codex używaj bezpośrednio `make pdf`, bez `generate.sh` i Podmana. Zachowuj plik źródłowy bez zmian. Nie nadawaj tłumaczeniu licencji ani wydawcy bez ustalenia z użytkownikiem.
+Porównywarka `docs/compare.html` używa oryginalnego PDF, aktualnego
+polskiego wydania na GitHub Pages, PDF.js oraz IndexedDB z migracją
+dotychczasowych zakreśleń `simeon-pdf-comparison:`.
+Zmiany w jej logice wymagają kontroli testów `make test`.
+Po zmianach składu książki zweryfikuj wizualnie odpowiednie strony PDF
+gdy wynik buildu jest dostępny.
 
 ## Kończenie pracy
 
