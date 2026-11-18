@@ -58,3 +58,8 @@ SHA256 eksportów:
 | HTML | `435c8001fc647f7e91016d3ef21283d8c1c605cf471310b8bcf2c6a002e1da7d` |
 
 Treść, eksporty i przegląd wizualny zakończone. Status commita i PR-a jest śledzony osobno w POSTEP.md.
+
+
+## Publikacja
+
+Poprawki, eksporty i raporty zapisano w commicie `91cf618` i opublikowano gałąź `codex/review-calosc-2026-11-15` w `tometchy/Simeon`. Próba utworzenia PR-a do `master` zakończyła się 2026-11-18 błędem GitHub API `403 Resource not accessible by integration`. Potwierdzono, że otwarty PR z tej gałęzi nie istnieje. Brak dostępnego alternatywnego uwierzytelnienia API i narzędzia przeglądarki; dalszy krok wymaga udostępnienia uprawnień do tworzenia PR-ów lub ręcznego utworzenia. Wszystkie kontrole treści i eksportów pozostają zakończone.
