@@ -43,8 +43,8 @@ build/pdf/                        lokalny, generowany PDF (ignorowany przez Git)
 build/epub/                       lokalny, generowany EPUB (ignorowany przez Git)
 build/docx/                       lokalny, generowany DOCX (ignorowany przez Git)
 docs/index.html                   generowany HTML (ignorowany przez Git)
-docs/compare.html                 porównywarka angielskiego i polskiego PDF-u
-tests/                            testy porównywarki
+compare-config.json               konfiguracja wspólnej porównywarki
+docs/compare.html                 generowana porównywarka PDF (ignorowana przez Git)
 .github/workflows/build.yml       testy, budowanie i publikacja GitHub Pages
 charlessimeon00moulgoog.pdf        oryginalny skan
 ```
@@ -70,7 +70,8 @@ make epub    # build/epub/Charles-Simeon-H-C-G-Moule.epub
 make docx    # build/docx/Charles-Simeon-H-C-G-Moule.docx
 make html    # docs/index.html
 make book    # wszystkie cztery formaty; także domyślne make i make all
-make test    # testy porównywarki PDF
+make compare # wygeneruj porównywarkę PDF (po make pdf)
+make test    # wspólne testy porównywarki PDF
 ```
 
 Nazwę wynikową ustawia `OUTPUT_FILENAME` w `Makefile`. Dane książki znajdują się w `metadata.yml`. Rok 1892 i wydawca Methuen & Co. opisują oryginał, a nie polskie wydanie.
@@ -83,7 +84,7 @@ Opcjonalnie można zbudować wszystkie formaty lokalnie lub w kontenerze (`./gen
 
 ## Podgląd i porównywanie
 
-Uruchom serwer z głównego katalogu repozytorium:
+Po `make pdf` uruchom `make compare`, a następnie serwer z głównego katalogu repozytorium:
 
 ```bash
 python3 -m http.server 8000
@@ -96,10 +97,12 @@ Porównywarka otwiera skan angielski oraz wygenerowany polski PDF. Zakreślenia 
 
 Po wdrożeniu przez GitHub Pages porównywarka pobiera oryginał z `master`, a polski PDF z aktualnego wydania na Pages. Lokalne zmiany oglądaj przez lokalny serwer.
 
+Kod porównywarki, PDF.js i testy są utrzymywane w [tometchy/pdf-compare](https://github.com/tometchy/pdf-compare). Lokalny `compare-config.json` określa wyłącznie adresy PDF, tytuł, dotychczasową przestrzeń danych przeglądarki i domyślne repozytorium synchronizacji. Nie zmieniaj przestrzeni danych ani nie zapisuj tokenów w konfiguracji. GitHub Actions pobiera najnowszą gałąź `main` przy każdym buildzie i dodatkowo co 6 godzin (harmonogram może mieć opóźnienia); publikację można też uruchomić ręcznie. `make compare` generuje lokalną porównywarkę, a `make test` pobiera i uruchamia wspólne testy.
+
 ## Automatyczna publikacja przez GitHub Actions
 
 Workflow [`.github/workflows/build.yml`](.github/workflows/build.yml)
-uruchamia testy (`npm ci`, `make test`) oraz buduje cztery formaty
+uruchamia wspólne testy oraz buduje cztery formaty
 (`make -B all`) dla każdego PR do `master`. Po merge do `master`
 publikuje PDF, EPUB, DOCX i HTML w jednym wdrożeniu GitHub Pages.
 Wszystko działa na darmowym standardowym runnerze Ubuntu w publicznym repozytorium.
@@ -136,4 +139,4 @@ Warto zweryfikować wizualnie skład PDF po zmianach typograficznych.
 
 ## Zasady udostępniania
 
-Zasady udostępniania polskiego tłumaczenia pozostają do ustalenia przed publikacją. Repozytorium nie przypisuje przekładowi licencji automatycznie. Plik `docs/vendor/pdfjs/LICENSE` dotyczy dołączonej biblioteki PDF.js.
+Zasady udostępniania polskiego tłumaczenia pozostają do ustalenia przed publikacją. Repozytorium nie przypisuje przekładowi licencji automatycznie. Generowany plik `docs/vendor/pdfjs/LICENSE` dotyczy biblioteki PDF.js.

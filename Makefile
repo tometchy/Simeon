@@ -51,9 +51,21 @@ $(BUILD)/docx/$(OUTPUT_FILENAME).docx: $(BASE_DEPENDENCIES)
 	mkdir -p $(BUILD)/docx
 	$(CONTENT) | $(PANDOC_COMMAND) $(ARGS) $(DOCX_ARGS) -o $@
 
-test:
-	node --test tests/*.test.mjs
 
 clean:
 	rm -rf $(BUILD)
 	rm -f docs/index.html
+
+# The comparison viewer is maintained in one shared repository.
+.PHONY: compare compare-source test
+compare-source:
+	@if [ -d .pdf-compare/.git ]; then git -C .pdf-compare pull --ff-only; else git clone --depth 1 --branch main https://github.com/tometchy/pdf-compare.git .pdf-compare; fi
+
+compare: compare-source
+	node .pdf-compare/scripts/build.mjs compare-config.json docs
+	git -C .pdf-compare rev-parse HEAD > docs/compare-version.txt
+	@if [ -f "$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf" ]; then mkdir -p docs/build/pdf && cp "$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf" docs/build/pdf/; fi
+
+test: compare-source
+	npm ci --ignore-scripts --prefix .pdf-compare
+	npm test --prefix .pdf-compare
