@@ -63,10 +63,10 @@ Nie stosuj bezpośredniego `git push` do chronionego `master`.
 Można dodatkowo uruchomić lokalnie `make test` i `make all`, gdy
 narzędzia są dostępne, ale nie jest to wymóg do utworzenia PR.
 
-Porównywarka `docs/compare.html` używa oryginalnego PDF, aktualnego
-polskiego wydania na GitHub Pages, PDF.js oraz IndexedDB z migracją
-dotychczasowych zakreśleń `simeon-pdf-comparison:`.
-Zmiany w jej logice wymagają kontroli testów `make test`.
+Porównywarka jest generowana z `tometchy/pdf-compare` i `compare-config.json`.
+Nie zmieniaj generowanych `docs/compare.html` ani `docs/highlight-store.mjs`.
+Zmiany logiki wprowadzaj w repozytorium wspólnym, zachowując przestrzeń danych
+`simeon-pdf-comparison:`. Lokalnie używaj `make compare` oraz `make test`.
 Po zmianach składu książki zweryfikuj wizualnie odpowiednie strony PDF
 gdy wynik buildu jest dostępny.
 
